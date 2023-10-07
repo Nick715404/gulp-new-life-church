@@ -1,12 +1,3 @@
-// removing padding 
-*,
-*::after,
-*::before {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-}
-
 // Container
 .container {
     max-width: ($containerWidth + $containerPadding) + px;
@@ -33,5 +24,9 @@
 
 // Body
 body {
-    font-family: $fontMain;
+    font-family: 'MullerRegular';
+    background-color: #6e6e6e;
+    color: $whiteGrey;
+    font-size: 22px;
+    line-height: 130%;
 }

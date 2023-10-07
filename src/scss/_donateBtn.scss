@@ -1,0 +1,19 @@
+#donateBtn {
+    background: transparent;
+    border: 1px solid $white;
+    outline: none;
+    width: 211px;
+    height: 60px;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 100%;
+    text-transform: uppercase;
+    color: $white;
+    border-radius: 100px;
+    cursor: pointer;
+    transition: all .3s ease;
+    &:hover {
+        background-color: $white;
+        color: $black;
+    }
+}

@@ -5,18 +5,21 @@ $containerWidthSmall: 1340;
 $containerPadding: 40;
 $containerSidePadding: math.div($containerPadding, 2);
 $breakpoint1450: 1449.98 + px;
+$breakpoint1024: 1024.98 + px;
 $breakpoint992: 991.98 + px;
 $breakpoint768: 767.98 + px;
 $breakpoint480: 479.98 + px;
 
 // Colors
-$mainColor: #131418;
+$grey: #191919;
+$white: #fff;
+$whiteGrey: #333;
+$black: #000;
 
 // Burger Menu
-$burgerBreakpoint: $breakpoint992;
+$burgerBreakpoint: $breakpoint1024;
 $burgerColor: #131418;
 $burgerActiveColor: #fefefe;
 
 // Fonts
-$fontMain: sans-serif;
-$fontSecondary: '';
+$fontMain: 'MullerRegular';

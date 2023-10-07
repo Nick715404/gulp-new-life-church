@@ -142,7 +142,7 @@ function clean(params) {
 // let build = gulp.series(clean, gulp.parallel(html, js, css, images, fonts))
 
 // Without clean build
-let build = gulp.series(gulp.parallel(html, js, css, images, fonts))
+let build = gulp.series(gulp.parallel(html, css, js, images, fonts))
 let watch = gulp.parallel(build, watchFiles, browserSync)
 
 exports.img = img

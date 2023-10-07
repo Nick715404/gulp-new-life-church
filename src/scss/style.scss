@@ -1,12 +1,14 @@
 // Global SCSS-files imports
-@import './vars';
-@import './reset';
-@import './global';
+@import './blocks/vars';
+@import './blocks/global';
+@import './blocks/fonts';
+@import './blocks/reset';
 
 // Sections or Pages SCSS-files imports
 @import './header';
-// @import './home';
-// @import './footer';
+@import './navbar';
+@import './logo';
+@import './donateBtn';
 
 // Libs
 // @import './libs/swiper';
