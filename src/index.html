@@ -1,21 +1,32 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Index</title>
+    <title>Церковь Новая Жизнь || Челябинск</title>
     <link rel="stylesheet" href="./css/style.min.css">
 </head>
 
 <body class="main__body">
-     <!-- header -->
-    @@include('./html/_header.html')
-    <!-- Main Page -->
-    <main></main>
-    <!-- Footer -->
-    @@include('./html/_footer.html')
+    <!-- Обертка страницы -->
+    <div class="page">
+        <!-- Шапка -->
+        @@include('./html/_header.html')
+        <!-- Main Page -->
+        <main class="main">
+            <!-- Главный экран -->
+            @@include('./html/_hero.html')
+            <!-- Белая коробка -->
+            <div id="whiteBox">
+                <!-- Хотите познакомиться? -->
+                @@include('./html/_meetings.html')
+            </div>
+        </main>
+        <!-- Футер -->
+        @@include('./html/_footer.html')
+    </div>
 </body>
 
 <script src="./js/scripts.min.js"></script>

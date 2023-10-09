@@ -1,5 +1,11 @@
 .header {
+    position: absolute;
+    z-index: 99;
+    width: 100%;
+    top: 0;
+    right: 0;
     color: $white;
+    margin-top: 40px;
 }
 
 .header__wrapper {

@@ -22,11 +22,66 @@
     }
 }
 
+.container--small {
+    max-width: ($containerWidthSmall + $containerPadding) + px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 $containerSidePadding + px;
+
+    @media (max-width: $breakpoint1450) {
+        max-width: 1200px;
+    }
+
+    @media (max-width: $breakpoint992) {
+        max-width: 970px;
+    }
+
+    @media (max-width: $breakpoint768) {
+        max-width: 740px;
+    }
+
+    @media (max-width: $breakpoint480) {
+        max-width: none;
+    }
+}
+
+body,
+html {
+    min-height: 100%;
+}
+
 // Body
 body {
     font-family: 'MullerRegular';
-    background-color: #6e6e6e;
+    background-color: $grey;
     color: $whiteGrey;
     font-size: 22px;
     line-height: 130%;
+    padding: 16px;
+}
+
+.page {
+    border-radius: 100px;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+.main {
+    flex-grow: 1;
+}
+
+#whiteBox {
+    position: relative;
+    background-color: $white;
+    &::after {
+        content: '';
+        position: absolute;
+        top: -96px;
+        height: 96px;
+        width: 100%;
+        background: $white;
+        border-radius: 100px 100px 0 0;
+    }
 }

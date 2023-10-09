@@ -15,7 +15,6 @@
 
     &__item {
         display: flex;
-        padding: 10px 25px 10px 10px;
         border: 1px solid transparent;
         transition: all .3s ease-in;
 
@@ -27,7 +26,7 @@
 
     &__link {
         position: relative;
-        display: inline-block;
+        padding: 10px 25px 10px 10px;
         font-size: 16px;
         font-weight: 400;
         line-height: 100%;
@@ -37,14 +36,14 @@
         &::after {
             content: '';
             position: absolute;
-            right: -20px;
-            top: 0px;
+            right: 9px;
+            top: 13px;
             background-image: url(../img/svg/arrow-down.svg);
             background-repeat: no-repeat;
             background-size: contain;
             background-position: center;
-            width: 18px;
-            height: 18px;
+            width: 10px;
+            height: 10px;
         }
     }
 }
@@ -68,10 +67,9 @@
     background-position: center;
     width: 100%;
     height: 100%;
-}
-
-#youtubeLink:hover {
-    background-image: url(../img/svg/socials/youtubeRed.svg);
+    &:hover {
+        background-image: url(../img/svg/socials/youtubeRed.svg);
+    }
 }
 
 .youtube-link {

@@ -1,0 +1,33 @@
+.hero {
+    position: relative;
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: 105%;
+    min-height: 1080px;
+    color: $white;
+    font-family: 'Unbounded';
+
+    &__wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        min-height: 55rem;
+        max-width: 772px;
+    }
+
+    &__title {
+        font-size: 70px;
+        line-height: 120%;
+        text-transform: uppercase;
+
+        &--sub {
+            max-width: 584px;
+            font-size: 40px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 120%;
+            text-transform: uppercase;
+            margin-bottom: 35px;
+        }
+    }
+}
