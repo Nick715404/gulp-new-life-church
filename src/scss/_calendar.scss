@@ -1,0 +1,73 @@
+.calendar {
+  max-width: 386px;
+
+  &-list {
+    &__item {
+      min-height: 166px;
+      margin-bottom: 35px;
+      padding-top: 35px;
+      padding-bottom: 30px;
+      border-top: 1px solid #DBDBDB;
+      &:last-child {
+      border-bottom: 1px solid #DBDBDB;
+      }
+    }
+
+    &__event {
+      display: flex;
+      align-items: center;
+      margin-bottom: 15px;
+    }
+
+    &__day-wrapper {
+      display: flex;
+      align-items: center;
+      gap: 62px;
+      margin-bottom: 10px;
+    }
+
+    &__day-digit {
+      color: $moodGreen;
+      font-family: $fontSecond;
+      font-size: 60px;
+      font-weight: 400;
+      line-height: 120%;
+    }
+
+    &__day-info-wrapper {
+      font-family: $fontMain;
+      display: flex;
+      flex-direction: column;
+    }
+
+    &__time-wrapper {
+      border: 1px solid $moodGreen;
+      color: $moodGreen;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 100%;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 16px;
+      border-radius: 50px;
+      margin-right: 38px;
+    }
+  }
+}
+
+#calendar-month {
+  color: $whiteGrey;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 120%;
+}
+
+#calendar-day {
+  color: $whiteGreyTrans;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 120%;
+}

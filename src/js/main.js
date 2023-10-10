@@ -1,7 +1,13 @@
-const body = document.querySelector('.main__body')
+@@include('./libs/swiper-bundle.min.js');
 
-window.addEventListener('scroll', e => {
-  body.style.setProperty('--scrollTop', `${window.scrollY}px`);
-})
+const swiper = new Swiper('.swiper', {
+  // Optional parameters
+  direction: 'horizontal',
+  loop: false,
 
-console.log(body);
+  // Navigation arrows
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+});
