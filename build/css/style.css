@@ -155,7 +155,7 @@ ol {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 10px 20px;
+  padding: 10px 10px;
   gap: 10px;
 }
 
@@ -608,7 +608,212 @@ ol {
 
 .event {
   width: 100%;
-  min-height: 767px;
+  max-height: 567px;
+  background-image: url("./../img/events/zdes_kak_na_nebe.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  border-radius: 96px;
+  overflow: hidden;
+  padding: 110px 98px 100px 98px;
+}
+
+.event__title {
+  font-family: "Unbounded";
+  font-size: 80px;
+  font-weight: 400;
+  line-height: 100%;
+  text-transform: uppercase;
+  margin-bottom: 32px;
+}
+
+.event__description {
+  max-width: 630px;
+}
+
+.event__text-box {
+  color: #fff;
+  max-width: 852px;
+  margin-bottom: 105px;
+}
+
+.event__content-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  color: #fff;
+}
+
+.event__tag-box {
+  padding: 10px 16px;
+  border: 1px solid #fff;
+  border-radius: 50px;
+  font-family: "MullerRegular";
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 100%;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.event__link-box {
+  position: relative;
+  width: 223px;
+  height: 56px;
+  border-radius: 100px;
+  background-color: #fff;
+  text-align: center;
+  font-family: "MullerRegular";
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 100%;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  border: 1px solid transparent;
+  -webkit-transition: all 0.3s ease-out;
+  -o-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+}
+
+.event__link-box:hover {
+  background-color: transparent;
+  border: 1px solid #fff;
+}
+
+.event__link-box:hover .event__link {
+  color: #fff;
+}
+
+.event__link {
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  color: #191919;
+  -webkit-transition: all 0.3s ease-out;
+  -o-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+}
+
+.events {
+  padding-bottom: 88px;
+}
+
+.events__box {
+  position: relative;
+  width: 100%;
+  min-height: 1189px;
+}
+
+.events__event-position {
+  position: absolute;
+  width: 100%;
+  -webkit-transition: all 0.4s ease-in;
+  -o-transition: all 0.4s ease-in;
+  transition: all 0.4s ease-in;
+}
+
+.events__event-position:nth-child(1) {
+  -webkit-transform: translateY(0);
+      -ms-transform: translateY(0);
+          transform: translateY(0);
+}
+
+.events__event-position:nth-child(1):hover {
+  -webkit-transform: translateY(-80px);
+      -ms-transform: translateY(-80px);
+          transform: translateY(-80px);
+}
+
+.events__event-position:nth-child(2) {
+  -webkit-transform: translateY(300px);
+      -ms-transform: translateY(300px);
+          transform: translateY(300px);
+}
+
+.events__event-position:nth-child(2):hover {
+  -webkit-transform: translateY(220px);
+      -ms-transform: translateY(220px);
+          transform: translateY(220px);
+}
+
+.events__event-position:nth-child(3) {
+  -webkit-transform: translateY(600px);
+      -ms-transform: translateY(600px);
+          transform: translateY(600px);
+}
+
+.events__event-position:nth-child(3):hover {
+  -webkit-transform: translateY(600px);
+      -ms-transform: translateY(600px);
+          transform: translateY(600px);
+}
+
+.testimony {
+  padding-bottom: 167px;
+}
+
+.testimony__wrapper {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  min-height: 286px;
+  overflow: hidden;
+  border-radius: 30px;
+  padding-left: 65px;
+  padding-top: 57px;
+}
+
+.testimony__title {
+  color: #FFF;
+  font-family: "Unbounded";
+  font-size: 30px;
+  font-weight: 400;
+  line-height: 150%;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  max-width: 644px;
+  margin-bottom: 26px;
+}
+
+.testimony__btn {
+  width: 235px;
+  height: 56px;
+  background-color: #fff;
+  border: 1px solid #fff;
+  color: #191919;
+  font-family: "MullerRegular";
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 100%;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  border-radius: 50px;
+  cursor: pointer;
+  -webkit-transition: all 0.3s ease-out;
+  -o-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+}
+
+.testimony__btn:hover {
+  background-color: transparent;
+  color: #fff;
 }
 
 /**

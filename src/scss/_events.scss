@@ -1,0 +1,42 @@
+.events {
+
+  padding-bottom: 88px;
+
+  &__box {
+    position: relative;
+    width: 100%;
+    min-height: 1189px;
+  }
+
+  &__event-position {
+    position: absolute;
+    width: 100%;
+    transition: all .4s ease-in;
+
+    &:nth-child(1) {
+      transform: translateY(0);
+
+      &:hover {
+        transform: translateY(-80px);
+      }
+    }
+
+    &:nth-child(2) {
+      transform: translateY(300px);
+
+      &:hover {
+        transform: translateY(220px);
+      }
+    }
+
+    &:nth-child(3) {
+      transform: translateY(600px);
+
+      &:hover {
+        transform: translateY(600px);
+      }
+    }
+
+    &:last-child {}
+  }
+}

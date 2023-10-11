@@ -1,0 +1,48 @@
+.testimony {
+  padding-bottom: 167px;
+
+  &__wrapper {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    min-height: 286px;
+    overflow: hidden;
+    border-radius: 30px;
+    padding-left: 65px;
+    padding-top: 57px;
+  }
+
+  &__title {
+    color: #FFF;
+    font-family: $fontSecond;
+    font-size: 30px;
+    font-weight: 400;
+    line-height: 150%;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    max-width: 644px;
+    margin-bottom: 26px;
+  }
+
+  &__btn {
+    width: 235px;
+    height: 56px;
+    background-color: $white;
+    border: 1px solid $white;
+    color: $grey;
+    font-family: $fontMain;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 100%;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all .3s ease-out;
+
+    &:hover {
+      background-color: transparent;
+      color: $white;
+    }
+  }
+}
