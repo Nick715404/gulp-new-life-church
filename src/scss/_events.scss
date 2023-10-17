@@ -12,6 +12,11 @@
     position: absolute;
     width: 100%;
     transition: all .4s ease-in;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    border-radius: 96px;
+    overflow: hidden;
 
     &:nth-child(1) {
       transform: translateY(0);
@@ -33,10 +38,20 @@
       transform: translateY(600px);
 
       &:hover {
-        transform: translateY(600px);
+        transform: translateY(450px);
       }
     }
-
-    &:last-child {}
   }
+}
+
+#zdes-kak-na-nebe {
+  background-image: url('./../img/events/zdes_kak_na_nebe.png');
+}
+
+#youth {
+  background-color: rgb(106, 151, 255);
+}
+
+#youth-magnitogorsk {
+  background-color: rgb(247, 175, 103);
 }

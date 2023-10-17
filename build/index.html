@@ -2,433 +2,540 @@
 <html lang="ru">
 
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Церковь Новая Жизнь || Челябинск</title>
-  <link rel="stylesheet" href="./css/style.min.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Церковь Новая Жизнь || Челябинск</title>
+    <link rel="stylesheet" href="./css/style.min.css">
 </head>
 
 <body class="main__body">
-  <!-- Обертка страницы -->
-  <div class="page">
-    <!-- Шапка -->
-    <header>
-      <!-- Navbar -->
-      <div class="header">
+    <!-- Обертка страницы -->
+    <div class="page">
+        <!-- Шапка -->
+        <header>
+    <!-- Navbar -->
+    <div class="header">
         <div class="container">
-          <div class="header__wrapper">
-            <div class="">
-              <div class="logo" style="background-image: url('../../img/svg/logo.svg');">
-                <a class="logo__link" href="/"></a>
-              </div>
+            <div class="header__wrapper">
+                <div class="header__logo-box">
+                    <div class="logo" style="background-image: url('../../img/svg/logo.svg');">
+    <a class="logo__link" href="/"></a>
+</div>
+                </div>
+                <div class="header__nav-box">
+                    <nav class="nav">
+    <ul class="nav__list list">
+        <li class="list__item">
+            <a class="list__link" href="/about">О нас</a>
+        </li>
+        <li class="list__item">
+            <a class="list__link" href="/events">События</a>
+        </li>
+        <li class="list__item">
+            <a class="list__link" href="/ministry">Служение</a>
+        </li>
+        <li class="list__item">
+            <a class="list__link" href="/teaching">Обучение</a>
+        </li>
+        <li class="list__item">
+            <a class="list__link" href="/contacts">Контакты</a>
+        </li>
+        <li id="youtubeBox">
+            <div class="list__item" id="youtubeLink">
+                <a class="youtube-link" href="https://www.youtube.com/@NewLifeChelTV" target="_blank"></a>
             </div>
-            <div class="">
-              <nav class="nav">
-                <ul class="nav__list list">
-                  <li class="list__item">
-                    <a class="list__link" href="/about">О нас</a>
-                  </li>
-                  <li class="list__item">
-                    <a class="list__link" href="/events">События</a>
-                  </li>
-                  <li class="list__item">
-                    <a class="list__link" href="/ministry">Служение</a>
-                  </li>
-                  <li class="list__item">
-                    <a class="list__link" href="/teaching">Обучение</a>
-                  </li>
-                  <li class="list__item">
-                    <a class="list__link" href="/contacts">Контакты</a>
-                  </li>
-                  <li id="youtubeBox">
-                    <div class="list__item" id="youtubeLink">
-                      <a class="youtube-link" href="https://www.youtube.com/@NewLifeChelTV" target="_blank"></a>
+        </li>
+    </ul>
+</nav>
+                </div>
+                <div class="header__btn-box">
+                    <button class="header__btn" id="donateBtn">
+    пожертвовать
+</button>
+                </div>
+                <div class="header__burger-box">
+                    <div class="header__burger burger">
+                        <span id="firstLine" class="burger__line burger__line--short"></span>
+                        <span id="secondLine" class="burger__line burger__line--large"></span>
+                        <span id="thirdLine" class="burger__line burger__line--short"></span>
                     </div>
-                  </li>
-                </ul>
-              </nav>
+                </div>
             </div>
-            <div class="">
-              <button class="header__btn" id="donateBtn">
-                пожертвовать
-              </button>
-            </div>
-          </div>
         </div>
-      </div>
-    </header>
-    <!-- Main Page -->
-    <main class="main">
-      <!-- Главный экран -->
-      <section class="hero" style="background-image: url('../img/png/hero.png');">
-        <div class="container--small">
-          <div class="hero__wrapper">
+    </div>
+</header>
+        <!-- Main Page -->
+        <main class="main">
+            <!-- Главный экран -->
+            <section class="hero" style="background-image: url('../img/png/hero.png');">
+    <div class="container--small">
+        <div class="hero__wrapper">
             <h1 class="hero__title hero__title--sub">Добро пожаловать в церковь</h1>
             <h1 class="hero__title">“Новая жизнь”</h1>
-          </div>
         </div>
-      </section>
+    </div>
+</section>
 
-      <!-- Белая коробка -->
-      <div id="whiteBox">
-        <!-- Хотите познакомиться? -->
-        <section class="meetings">
-          <div class="container">
-            <div class="meetings__wrapper">
-              <div class="box meetings__box meetings__box--left">
+            <!-- Белая коробка -->
+            <div id="whiteBox">
+                <!-- Хотите познакомиться? -->
+                <section class="meetings">
+    <div class="container">
+        <div class="meetings__wrapper">
+            <div class="box meetings__box meetings__box--left">
                 <h2 class="box__title">Хотим поближе познакомиться с вами</h2>
                 <a class="box__link" id="aboutLink" href="/about">О церкви</a>
-              </div>
-              <div class="box meetings__box meetings__box--right">
+            </div>
+            <div class="box meetings__box meetings__box--right">
                 <div class="box__wrapper">
-                  <p class="box__text" id="massegeText">
-                    В мире часто бывает очень тяжело одному, когда вокруг суета, проблемы. Но Иисус Христос сделал все,
-                    для того, чтобы ты больше не оставался один на один с ними. Церковь – это место, где тебя принимают
-                    любым, молятся за твои проблемы и помогают ближе узнать Бога.
-                  </p>
-                  <p class="box__text" id="infoText">
-                    Будем рады видеть тебя на наших Богослужениях каждое воскресенье в 10:00, 13:00, 16:00 (для
-                    молодежи) по адресу г. Челябинск, ул. Красноармейская, 57.
-                  </p>
+                    <p class="box__text" id="massegeText">
+                        В мире часто бывает очень тяжело одному, когда вокруг суета, проблемы. Но Иисус Христос сделал все,
+                        для того, чтобы ты больше не оставался один на один с ними. Церковь – это место, где тебя принимают
+                        любым, молятся за твои проблемы и помогают ближе узнать Бога.
+                    </p>
+                    <p class="box__text" id="infoText">
+                        Будем рады видеть тебя на наших Богослужениях каждое воскресенье в 10:00, 13:00, 16:00 (для
+                        молодежи) по адресу г. Челябинск, ул. Красноармейская, 57.
+                    </p>
                 </div>
                 <div class="socials">
-                  <ul class="socials__list">
-                    <li class="socials__item">
-                      <div class="socials__img"
-                        style="background-image: url(./../../img/svg/socials/twitter-black.svg);">
-                        <a class="socials__link" href="#"></a>
-                      </div>
-                    </li>
-                    <li class="socials__item">
-                      <div class="socials__img" style="background-image: url(./../../img/svg/socials/inst-black.svg);">
-                        <a class="socials__link" href="#"></a>
-                      </div>
-                    </li>
-                    <li class="socials__item">
-                      <div class="socials__img"
-                        style="background-image: url(./../../img/svg/socials/facebook-black.svg);">
-                        <a class="socials__link" href="#"></a>
-                      </div>
-                    </li>
-                  </ul>
-                </div>
-              </div>
+    <ul class="socials__list">
+        <li class="socials__item">
+            <div class="socials__img" style="background-image: url(./../../img/svg/socials/twitter-black.svg);">
+                <a class="socials__link" href="#"></a>
             </div>
-          </div>
-        </section>
-        <!-- Послание на год -->
-        <section class="message">
-          <div class="container">
-            <div class="message__wrapper">
-              <div class="message__content-box">
-                <div class="message__video-box">
-                  <div class="container--small message__title-box">
-                    <h2 class="message__title">
-                      Послание на год
-                    </h2>
-                  </div>
-                  <div class="message__video message__video-pastor--andrey">
-                    <div class="message-box">
-                      <iframe class="year-message-iframe" width="560" height="315"
-                        src="https://www.youtube.com/embed/DXDwkvLAijI?si=vUJJNz1pQBEU1zEP" title="YouTube video player"
-                        frameborder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                        allowfullscreen></iframe>
-                    </div>
-                  </div>
-                  <div class="message__video sermons">
-                    <div class="last-sermon">
-                      <div class="last-sermon__wrapper">
-                        <div class="container--small">
-                          <h3 class="last-sermon__title">Последние проповеди</h3>
-                        </div>
-                        <!-- Slider main container -->
-                        <div class="swiper">
-                          <!-- Additional required wrapper -->
-                          <div class="swiper-wrapper">
-                            <!-- Slides -->
-                            <div class="swiper-slide">
-                              <iframe class="swiper-iframe" width="560" height="315"
-                                src="https://www.youtube.com/embed/BPy7VmwV8GM?si=zky3GCgncwj33mTb"
-                                title="YouTube video player" frameborder="0"
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                allowfullscreen></iframe>
-                            </div>
-                            <div class="swiper-slide">
-                              <iframe class="swiper-iframe" width="560" height="315"
-                                src="https://www.youtube.com/embed/7LhvbCzq4J0?si=zn4zk-ouDMppwihc"
-                                title="YouTube video player" frameborder="0"
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                allowfullscreen></iframe>
-                            </div>
-                            <div class="swiper-slide">
-                              <iframe class="swiper-iframe" width="560" height="315"
-                                src="https://www.youtube.com/embed/BPy7VmwV8GM?si=zky3GCgncwj33mTb"
-                                title="YouTube video player" frameborder="0"
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                allowfullscreen></iframe>
-                            </div>
-                            <div class="swiper-slide">
-                              <iframe class="swiper-iframe" width="560" height="315"
-                                src="https://www.youtube.com/embed/7LhvbCzq4J0?si=zn4zk-ouDMppwihc"
-                                title="YouTube video player" frameborder="0"
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                allowfullscreen></iframe>
-                            </div>
-                          </div>
-                          <!-- If we need navigation buttons -->
-                          <div class="swiper-button-prev"></div>
-                          <div class="swiper-button-next"></div>
-                        </div>
-
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="message__calendar">
-                  <div class="calendar">
-                    <div class="calendar__wrapper">
-                      <div class="calendar__list calendar-list">
-                        <div class="calendar-list__item">
-                          <div class="calendar-list__day-wrapper">
-                            <div class="calendar-list__day">
-                              <span class="calendar-list__day-digit">5</span>
-                            </div>
-                            <div class="calendar-list__day-info-wrapper">
-                              <span class="calendar-list__info" id="calendar-month">Июль</span>
-                              <span class="calendar-list__info" id="calendar-day">Среда</span>
-                            </div>
-                          </div>
-                          <div class="calendar-list__events">
-                            <div class="calendar-list__event">
-                              <div class="calendar-list__time-wrapper">
-                                <span class="calendar-list__event-time">18:30</span>
-                              </div>
-                              <div class="calendar-list__descr-wrapper">
-                                <span class="calendar-list__event-title">Общецерковная молитва</span>
-                              </div>
-                            </div>
-                            <div class="calendar-list__event">
-                              <div class="calendar-list__time-wrapper">
-                                <span class="calendar-list__event-time">18:30</span>
-                              </div>
-                              <div class="calendar-list__descr-wrapper">
-                                <span class="calendar-list__event-title">Общецерковная молитва</span>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="calendar-list__item">
-                          <div class="calendar-list__day-wrapper">
-                            <div class="calendar-list__day">
-                              <span class="calendar-list__day-digit">5</span>
-                            </div>
-                            <div class="calendar-list__day-info-wrapper">
-                              <span class="calendar-list__info">Июль</span>
-                              <span class="calendar-list__info">Среда</span>
-                            </div>
-                          </div>
-                          <div class="calendar-list__events">
-                            <div class="calendar-list__event">
-                              <div class="calendar-list__time-wrapper">
-                                <span class="calendar-list__event-time">18:30</span>
-                              </div>
-                              <div class="calendar-list__descr-wrapper">
-                                <span class="calendar-list__event-title">Общецерковная молитва</span>
-                              </div>
-                            </div>
-                            <div class="calendar-list__event">
-                              <div class="calendar-list__time-wrapper">
-                                <span class="calendar-list__event-time">18:30</span>
-                              </div>
-                              <div class="calendar-list__descr-wrapper">
-                                <span class="calendar-list__event-title">Общецерковная молитва</span>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="calendar-list__item">
-                          <div class="calendar-list__day-wrapper">
-                            <div class="calendar-list__day">
-                              <span class="calendar-list__day-digit">5</span>
-                            </div>
-                            <div class="calendar-list__day-info-wrapper">
-                              <span class="calendar-list__info">Июль</span>
-                              <span class="calendar-list__info">Среда</span>
-                            </div>
-                          </div>
-                          <div class="calendar-list__events">
-                            <div class="calendar-list__event">
-                              <div class="calendar-list__time-wrapper">
-                                <span class="calendar-list__event-time">18:30</span>
-                              </div>
-                              <div class="calendar-list__descr-wrapper">
-                                <span class="calendar-list__event-title">Общецерковная молитва</span>
-                              </div>
-                            </div>
-                            <div class="calendar-list__event">
-                              <div class="calendar-list__time-wrapper">
-                                <span class="calendar-list__event-time">18:30</span>
-                              </div>
-                              <div class="calendar-list__descr-wrapper">
-                                <span class="calendar-list__event-title">Общецерковная молитва</span>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="calendar-list__item">
-                          <div class="calendar-list__day-wrapper">
-                            <div class="calendar-list__day">
-                              <span class="calendar-list__day-digit">5</span>
-                            </div>
-                            <div class="calendar-list__day-info-wrapper">
-                              <span class="calendar-list__info">Июль</span>
-                              <span class="calendar-list__info">Среда</span>
-                            </div>
-                          </div>
-                          <div class="calendar-list__events">
-                            <div class="calendar-list__event">
-                              <div class="calendar-list__time-wrapper">
-                                <span class="calendar-list__event-time">18:30</span>
-                              </div>
-                              <div class="calendar-list__descr-wrapper">
-                                <span class="calendar-list__event-title">Общецерковная молитва</span>
-                              </div>
-                            </div>
-                            <div class="calendar-list__event">
-                              <div class="calendar-list__time-wrapper">
-                                <span class="calendar-list__event-time">18:30</span>
-                              </div>
-                              <div class="calendar-list__descr-wrapper">
-                                <span class="calendar-list__event-title">Общецерковная молитва</span>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="calendar-list__item">
-                          <div class="calendar-list__day-wrapper">
-                            <div class="calendar-list__day">
-                              <span class="calendar-list__day-digit">5</span>
-                            </div>
-                            <div class="calendar-list__day-info-wrapper">
-                              <span class="calendar-list__info">Июль</span>
-                              <span class="calendar-list__info">Среда</span>
-                            </div>
-                          </div>
-                          <div class="calendar-list__events">
-                            <div class="calendar-list__event">
-                              <div class="calendar-list__time-wrapper">
-                                <span class="calendar-list__event-time">18:30</span>
-                              </div>
-                              <div class="calendar-list__descr-wrapper">
-                                <span class="calendar-list__event-title">Общецерковная молитва</span>
-                              </div>
-                            </div>
-                            <div class="calendar-list__event">
-                              <div class="calendar-list__time-wrapper">
-                                <span class="calendar-list__event-time">18:30</span>
-                              </div>
-                              <div class="calendar-list__descr-wrapper">
-                                <span class="calendar-list__event-title">Общецерковная молитва</span>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+        </li>
+        <li class="socials__item">
+            <div class="socials__img" style="background-image: url(./../../img/svg/socials/inst-black.svg);">
+                <a class="socials__link" href="#"></a>
             </div>
-          </div>
-        </section>
-        <!-- Мероприятия -->
-        <section class="events">
-          <div class="container">
-            <div class="events__wrapper">
-              <div class="events__box">
-                <div class="events__event-position" id="zdes-kak-na-nebe">
-                  <div class="event">
-                    <div class="event__wrapper">
-                      <div class="event__text-box">
-                        <h3 class="event__title">Конференция прославления</h3>
-                        <p class="event__description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                          eiusmod tem.</p>
-                      </div>
-                      <div class="event__content-box">
-                        <div class="event__tag-box">
-                          <span class="event__tag">События</span>
-                        </div>
-                        <div class="event__link-box">
-                          <a class="event__link" href="#">Подробнее</a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="events__event-position" id="youth">
-                  <div class="event">
-                    <div class="event__wrapper">
-                      <div class="event__text-box">
-                        <h3 class="event__title">ЮСУрал</h3>
-                        <p class="event__description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                          eiusmod tem.</p>
-                      </div>
-                      <div class="event__content-box">
-                        <div class="event__tag-box">
-                          <span class="event__tag">События</span>
-                        </div>
-                        <div class="event__link-box">
-                          <a class="event__link" href="#">Подробнее</a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="events__event-position" id="youth-magnitogorsk">
-                  <div class="event">
-                    <div class="event__wrapper">
-                      <div class="event__text-box">
-                        <h3 class="event__title">ЮСУрал Магнитогорск</h3>
-                        <p class="event__description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                          eiusmod tem.</p>
-                      </div>
-                      <div class="event__content-box">
-                        <div class="event__tag-box">
-                          <span class="event__tag">События</span>
-                        </div>
-                        <div class="event__link-box">
-                          <a class="event__link" href="#">Подробнее</a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+        </li>
+        <li class="socials__item">
+            <div class="socials__img" style="background-image: url(./../../img/svg/socials/facebook-black.svg);">
+                <a class="socials__link" href="#"></a>
             </div>
-          </div>
-        </section>
-        <!-- Мероприятия -->
-        <section class="testimony">
-          <div class="container">
-            <div class="testimony__wrapper" style="background-image: url('./../img/testimony/overlay.png');">
-              <h2 class="testimony__title">У вас есть молитвенная нужда или свидетельство?</h2>
-              <button class="testimony__btn">хочу поделиться</button>
+        </li>
+    </ul>
+</div>
             </div>
+        </div>
+    </div>
+</section>
+                <!-- Послание на год -->
+                <section class="message">
+  <div class="container">
+    <div class="message__wrapper">
+      <div class="message__content-box">
+        <div class="message__video-box">
+          <div class="container--small message__title-box">
+            <h2 class="message__title">
+              Послание на год
+            </h2>
           </div>
-        </section>
-      </div>
-    </main>
-    <!-- Футер -->
-    <footer class="footer">
-      <div class="container">
-        <div class="footer__inner">
-
+          <div class="message__video message__video-pastor--andrey">
+            <div class="message-box">
+  <iframe class="year-message-iframe" width="560" height="315" src="https://www.youtube.com/embed/DXDwkvLAijI?si=vUJJNz1pQBEU1zEP" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</div>
+          </div>
+          <div class="message__video sermons">
+            <div class="last-sermon">
+  <div class="last-sermon__wrapper">
+    <div class="container--small">
+      <h3 class="last-sermon__title">Последние проповеди</h3>
+    </div>
+    <!-- Slider main container -->
+    <div class="swiper">
+      <!-- Additional required wrapper -->
+      <div class="swiper-wrapper">
+        <!-- Slides -->
+        <div class="swiper-slide">
+          <iframe class="swiper-iframe" width="560" height="315" src="https://www.youtube.com/embed/BPy7VmwV8GM?si=zky3GCgncwj33mTb"
+            title="YouTube video player" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen></iframe>
+        </div>
+        <div class="swiper-slide">
+          <iframe class="swiper-iframe" width="560" height="315" src="https://www.youtube.com/embed/7LhvbCzq4J0?si=zn4zk-ouDMppwihc"
+            title="YouTube video player" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen></iframe>
+        </div>
+        <div class="swiper-slide">
+          <iframe class="swiper-iframe" width="560" height="315" src="https://www.youtube.com/embed/BPy7VmwV8GM?si=zky3GCgncwj33mTb"
+            title="YouTube video player" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen></iframe>
+        </div>
+        <div class="swiper-slide">
+          <iframe class="swiper-iframe" width="560" height="315" src="https://www.youtube.com/embed/7LhvbCzq4J0?si=zn4zk-ouDMppwihc"
+            title="YouTube video player" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen></iframe>
         </div>
       </div>
-    </footer>
+      <!-- If we need navigation buttons -->
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
+    </div>
+
   </div>
+</div>
+          </div>
+        </div>
+        <div class="message__calendar">
+          <div class="calendar">
+  <div class="calendar__wrapper">
+    <div class="calendar__list calendar-list">
+      <!-- День -->
+      <div class="calendar-list__item">
+        <!-- Обертка с информацией по дню -->
+        <div class="calendar-list__day-wrapper">
+          <!-- Дата -->
+          <div class="calendar-list__day">
+            <!-- Число -->
+            <span class="calendar-list__day-digit">5</span>
+          </div>
+          <!-- Месяц и день -->
+          <div class="calendar-list__day-info-wrapper">
+            <!-- Месяц -->
+            <span class="calendar-list__info" id="calendar-month">Июль</span>
+            <!-- День -->
+            <span class="calendar-list__info" id="calendar-day">Среда</span>
+          </div>
+        </div>
+        <!-- Обертка с информацией событиям -->
+        <div class="calendar-list__events">
+          <!-- Событие -->
+          <div class="calendar-list__event">
+            <!-- Обертка со временем события -->
+            <div class="calendar-list__time-wrapper">
+              <!-- Время события -->
+              <span class="calendar-list__event-time">18:30</span>
+            </div>
+            <!-- Обертка с описанием события -->
+            <div class="calendar-list__descr-wrapper">
+              <!-- Описание события -->
+              <span class="calendar-list__event-title">Общецерковная молитва</span>
+            </div>
+          </div>
+          <div class="calendar-list__event">
+            <div class="calendar-list__time-wrapper">
+              <span class="calendar-list__event-time">18:30</span>
+            </div>
+            <div class="calendar-list__descr-wrapper">
+              <span class="calendar-list__event-title">Общецерковная молитва</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- День -->
+      <div class="calendar-list__item">
+        <!-- Обертка с информацией по дню -->
+        <div class="calendar-list__day-wrapper">
+          <!-- Дата -->
+          <div class="calendar-list__day">
+            <!-- Число -->
+            <span class="calendar-list__day-digit">5</span>
+          </div>
+          <!-- Месяц и день -->
+          <div class="calendar-list__day-info-wrapper">
+            <!-- Месяц -->
+            <span class="calendar-list__info" id="calendar-month">Июль</span>
+            <!-- День -->
+            <span class="calendar-list__info" id="calendar-day">Среда</span>
+          </div>
+        </div>
+        <!-- Обертка с информацией событиям -->
+        <div class="calendar-list__events">
+          <!-- Событие -->
+          <div class="calendar-list__event">
+            <!-- Обертка со временем события -->
+            <div class="calendar-list__time-wrapper">
+              <!-- Время события -->
+              <span class="calendar-list__event-time">18:30</span>
+            </div>
+            <!-- Обертка с описанием события -->
+            <div class="calendar-list__descr-wrapper">
+              <!-- Описание события -->
+              <span class="calendar-list__event-title">Общецерковная молитва</span>
+            </div>
+          </div>
+          <div class="calendar-list__event">
+            <div class="calendar-list__time-wrapper">
+              <span class="calendar-list__event-time">18:30</span>
+            </div>
+            <div class="calendar-list__descr-wrapper">
+              <span class="calendar-list__event-title">Общецерковная молитва</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- День -->
+      <div class="calendar-list__item">
+        <!-- Обертка с информацией по дню -->
+        <div class="calendar-list__day-wrapper">
+          <!-- Дата -->
+          <div class="calendar-list__day">
+            <!-- Число -->
+            <span class="calendar-list__day-digit">5</span>
+          </div>
+          <!-- Месяц и день -->
+          <div class="calendar-list__day-info-wrapper">
+            <!-- Месяц -->
+            <span class="calendar-list__info" id="calendar-month">Июль</span>
+            <!-- День -->
+            <span class="calendar-list__info" id="calendar-day">Среда</span>
+          </div>
+        </div>
+        <!-- Обертка с информацией событиям -->
+        <div class="calendar-list__events">
+          <!-- Событие -->
+          <div class="calendar-list__event">
+            <!-- Обертка со временем события -->
+            <div class="calendar-list__time-wrapper">
+              <!-- Время события -->
+              <span class="calendar-list__event-time">18:30</span>
+            </div>
+            <!-- Обертка с описанием события -->
+            <div class="calendar-list__descr-wrapper">
+              <!-- Описание события -->
+              <span class="calendar-list__event-title">Общецерковная молитва</span>
+            </div>
+          </div>
+          <div class="calendar-list__event">
+            <div class="calendar-list__time-wrapper">
+              <span class="calendar-list__event-time">18:30</span>
+            </div>
+            <div class="calendar-list__descr-wrapper">
+              <span class="calendar-list__event-title">Общецерковная молитва</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- День -->
+      <div class="calendar-list__item">
+        <!-- Обертка с информацией по дню -->
+        <div class="calendar-list__day-wrapper">
+          <!-- Дата -->
+          <div class="calendar-list__day">
+            <!-- Число -->
+            <span class="calendar-list__day-digit">5</span>
+          </div>
+          <!-- Месяц и день -->
+          <div class="calendar-list__day-info-wrapper">
+            <!-- Месяц -->
+            <span class="calendar-list__info" id="calendar-month">Июль</span>
+            <!-- День -->
+            <span class="calendar-list__info" id="calendar-day">Среда</span>
+          </div>
+        </div>
+        <!-- Обертка с информацией событиям -->
+        <div class="calendar-list__events">
+          <!-- Событие -->
+          <div class="calendar-list__event">
+            <!-- Обертка со временем события -->
+            <div class="calendar-list__time-wrapper">
+              <!-- Время события -->
+              <span class="calendar-list__event-time">18:30</span>
+            </div>
+            <!-- Обертка с описанием события -->
+            <div class="calendar-list__descr-wrapper">
+              <!-- Описание события -->
+              <span class="calendar-list__event-title">Общецерковная молитва</span>
+            </div>
+          </div>
+          <div class="calendar-list__event">
+            <div class="calendar-list__time-wrapper">
+              <span class="calendar-list__event-time">18:30</span>
+            </div>
+            <div class="calendar-list__descr-wrapper">
+              <span class="calendar-list__event-title">Общецерковная молитва</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- День -->
+      <div class="calendar-list__item">
+        <!-- Обертка с информацией по дню -->
+        <div class="calendar-list__day-wrapper">
+          <!-- Дата -->
+          <div class="calendar-list__day">
+            <!-- Число -->
+            <span class="calendar-list__day-digit">5</span>
+          </div>
+          <!-- Месяц и день -->
+          <div class="calendar-list__day-info-wrapper">
+            <!-- Месяц -->
+            <span class="calendar-list__info" id="calendar-month">Июль</span>
+            <!-- День -->
+            <span class="calendar-list__info" id="calendar-day">Среда</span>
+          </div>
+        </div>
+        <!-- Обертка с информацией событиям -->
+        <div class="calendar-list__events">
+          <!-- Событие -->
+          <div class="calendar-list__event">
+            <!-- Обертка со временем события -->
+            <div class="calendar-list__time-wrapper">
+              <!-- Время события -->
+              <span class="calendar-list__event-time">18:30</span>
+            </div>
+            <!-- Обертка с описанием события -->
+            <div class="calendar-list__descr-wrapper">
+              <!-- Описание события -->
+              <span class="calendar-list__event-title">Общецерковная молитва</span>
+            </div>
+          </div>
+          <div class="calendar-list__event">
+            <div class="calendar-list__time-wrapper">
+              <span class="calendar-list__event-time">18:30</span>
+            </div>
+            <div class="calendar-list__descr-wrapper">
+              <span class="calendar-list__event-title">Общецерковная молитва</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+                <!-- Мероприятия -->
+                <section class="events">
+  <div class="container">
+    <div class="events__wrapper">
+      <div class="events__box">
+        <div class="events__event-position" id="zdes-kak-na-nebe">
+          <div class="event">
+            <div class="event__wrapper">
+              <div class="event__text-box">
+                <h3 class="event__title">Конференция прославления</h3>
+                <p class="event__description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                  tem.</p>
+              </div>
+              <div class="event__content-box">
+                <div class="event__tag-box">
+                  <span class="event__tag">События</span>
+                </div>
+                <div class="event__link-box">
+                  <a class="event__link" href="#">Подробнее</a>
+                </div>
+              </div>
+            </div>
+            <a class="event-link-absolute" href="#"></a>
+          </div>
+        </div>
+        <div class="events__event-position" id="youth">
+          <div class="event">
+            <div class="event__wrapper">
+              <div class="event__text-box">
+                <h3 class="event__title">Конференция прославления</h3>
+                <p class="event__description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                  tem.</p>
+              </div>
+              <div class="event__content-box">
+                <div class="event__tag-box">
+                  <span class="event__tag">События</span>
+                </div>
+                <div class="event__link-box">
+                  <a class="event__link" href="#">Подробнее</a>
+                </div>
+              </div>
+            </div>
+            <a class="event-link-absolute" href="#"></a>
+          </div>
+        </div>
+        <div class="events__event-position" id="youth-magnitogorsk">
+          <div class="event">
+            <div class="event__wrapper">
+              <div class="event__text-box">
+                <h3 class="event__title">Конференция прославления</h3>
+                <p class="event__description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                  tem.</p>
+              </div>
+              <div class="event__content-box">
+                <div class="event__tag-box">
+                  <span class="event__tag">События</span>
+                </div>
+                <div class="event__link-box">
+                  <a class="event__link" href="#">Подробнее</a>
+                </div>
+              </div>
+            </div>
+            <a class="event-link-absolute" href="#"></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+                <!-- Мероприятия -->
+                <section class="testimony">
+  <div class="container">
+    <div class="testimony__wrapper" style="background-image: url('./../img/testimony/overlay.png');">
+      <h2 class="testimony__title">У вас есть молитвенная нужда или свидетельство?</h2>
+      <button class="testimony__btn">хочу поделиться</button>
+    </div>
+  </div>
+</section>
+                <!-- Хотите присоединиться к нам? -->
+                <section class="connect">
+  <div class="container">
+    <div class="connect__wrapper">
+      <div class="connect__title-box">
+        <h2 class="connect__title">Хотите присоединиться к нам в соц сетях?</h2>
+      </div>
+      <div class="connect__social-box">
+        <div class="connect__social">
+          <ul class="connect__list connect-list">
+            <li class="connect-list__item">
+              <div class="connect-list__icon connect-list__icon--vk" style="background-image: url('./../img/svg/socials/twitter-white.svg');">
+                <a class="connect-list__link" href=""></a>
+              </div>
+            </li>
+            <li class="connect-list__item">
+              <div class="connect-list__icon connect-list__icon--inst" style="background-image: url('./../img/svg/socials/facebook-white.svg');">
+                <a class="connect-list__link" href=""></a>
+              </div>
+            </li>
+            <li class="connect-list__item">
+              <div class="connect-list__icon connect-list__icon--facebook" style="background-image: url('./../img/svg/socials/inst-white.svg');">
+                <a class="connect-list__link" href=""></a>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+            </div>
+        </main>
+        <!-- Футер -->
+        <footer class="footer">
+    <div class="container">
+        <div class="footer__wrapper">
+            <div class="footer__info footer-info"></div>
+            <div class="footer__lists">
+                <div class="footer__list footer-list">
+
+                </div>
+                <div class="">
+
+                </div>
+                <div class="">
+
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+    </div>
 </body>
 
 <script src="./js/scripts.min.js"></script>
