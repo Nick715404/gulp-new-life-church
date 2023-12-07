@@ -112,24 +112,264 @@
                     <section id="sermons" class="home__sermons sermons">
                         <div class="container">
                             <div class="sermons__wrapper">
-                                <div class="sermons__title-box">
-                                    <h2 class="sermons__title">Послание на год</h2>
-                                </div>
-                                <div class="">
+                                <div class="sermons__content-box">
                                     <div class="sermons__video-box video-box">
                                         <div id="message-for-year" class="message-for-year">
+                                            <div class="sermons__title-box">
+                                                <h2 class="sermons__title">Послание на год</h2>
+                                            </div>
                                             <div class="message-for-year__video"></div>
                                         </div>
                                         <div id="last-sermons" class="last-sermons">
                                             <div class="last-sermons__title-box">
                                                 <h3 class="last-sermons__title">Последние проповеди</h3>
                                             </div>
+                                            <!-- swiper box -->
+                                            <div class="last-sermons__video-box sermons-swiper">
+                                                <div class="swiper-wrapper">
+                                                    <div class="swiper-slide" id="slide-1"></div>
+                                                    <div class="swiper-slide" id="slide-2"></div>
+                                                    <div class="swiper-slide" id="slide-3"></div>
+                                                    <div class="swiper-slide" id="slide-4"></div>
+                                                </div>
+                                                <div class="swiper-button-next"></div>
+                                                <div class="swiper-button-prev"></div>
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="sermons__calendar-box">
-                                        календарь-компонент
+                                        <div class="calendar">
+  <div id="calendat-list" class="calendar__list list">
+    <div id="calendar-item-1" class="list__item">
+      <div class="list__date-wrapper">
+        <div class="list__day-number">5</div>
+        <div class="list__day-info-wrapper">
+          <div class="list__info">Декабрь</div>
+          <div class="list__info">Среда</div>
+        </div>
+      </div>
+      <div class="list__events">
+        <div class="list__event">
+          <div class="list__event-time-wrapper">
+            <div class="list__event-time">12:00</div>
+          </div>
+          <div class="list__event-descr-wrapper">
+            <div class="list__event-title">Общецерковная молитвамолитвам </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="calendar-item-2" class="list__item">
+      <div class="list__date-wrapper">
+        <div class="list__day-number">5</div>
+        <div class="list__day-info-wrapper">
+          <div class="list__info">Декабрь</div>
+          <div class="list__info">Среда</div>
+        </div>
+      </div>
+      <div class="list__events">
+        <div class="list__event">
+          <div class="list__event-time-wrapper">
+            <div class="list__event-time">12:00</div>
+          </div>
+          <div class="list__event-descr-wrapper">
+            <div class="list__event-title">Общецерковная молитва</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="calendar-item-3" class="list__item">
+      <div class="list__date-wrapper">
+        <div class="list__day-number">5</div>
+        <div class="list__day-info-wrapper">
+          <div class="list__info">Декабрь</div>
+          <div class="list__info">Среда</div>
+        </div>
+      </div>
+      <div class="list__events">
+        <div class="list__event">
+          <div class="list__event-time-wrapper">
+            <div class="list__event-time">12:00</div>
+          </div>
+          <div class="list__event-descr-wrapper">
+            <div class="list__event-title">Общецерковная молитва</div>
+          </div>
+        </div>
+        <div class="list__event">
+          <div class="list__event-time-wrapper">
+            <div class="list__event-time">12:00</div>
+          </div>
+          <div class="list__event-descr-wrapper">
+            <div class="list__event-title">Общецерковная молитва</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="calendar-item-4" class="list__item list__item--weekend">
+      <div class="list__date-wrapper">
+        <div class="list__day-number">5</div>
+        <div class="list__day-info-wrapper">
+          <div class="list__info">Декабрь</div>
+          <div class="list__info">Среда</div>
+        </div>
+      </div>
+      <div class="list__events">
+        <div class="list__event">
+          <div class="list__event-time-wrapper">
+            <div class="list__event-time">12:00</div>
+          </div>
+          <div class="list__event-descr-wrapper">
+            <div class="list__event-title">Общецерковная молитва</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="calendar-item-5" class="list__item list__item--weekend">
+      <div class="list__date-wrapper">
+        <div class="list__day-number">5</div>
+        <div class="list__day-info-wrapper">
+          <div class="list__info">Декабрь</div>
+          <div class="list__info">Среда</div>
+        </div>
+      </div>
+      <div class="list__events">
+        <div class="list__event">
+          <div class="list__event-time-wrapper">
+            <div class="list__event-time">12:00</div>
+          </div>
+          <div class="list__event-descr-wrapper">
+            <div class="list__event-title">Общецерковная молитва</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
                                     </div>
                                 </div>
+                            </div>
+                        </div>
+                    </section>
+                    <!-- Секция "События" -->
+                    <section id="events" class="home__events events">
+                        <div class="container">
+                            <div class="events__wrapper">
+                                <!-- Динамический айдишник, бэкграунд, data-title -->
+<div id="1" class="event-card" style="" data-title="Здесь-как-на-небе">
+  <div class="event-card__text-box">
+    <!-- Динамический заголовок -->
+    <div class="event-card__title-box">
+      <h2 class="event-card__title">
+        Конференция прославления
+      </h2>
+    </div>
+    <!-- Динамическое описание -->
+    <div class="event-card__descr-box">
+      <p class="event-card__descr">Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati iste cum amet aperiam, nemo rerum suscipit quasi porro. Velit, tenetur. Repellat numquam quam, quod voluptatum odio neque distinctio in voluptatibus.</p>
+    </div>
+  </div>
+  <div class="event-card__btn-box">
+    <!-- Динамический тэг -->
+    <div class="event-card__tag-box">
+      <div class="event-card__tag">
+        Событие
+      </div>
+    </div>
+    <!-- Динамический href на событие -->
+    <div class="event-card__link-box">
+      <a class="event-card__link" href="#">
+        Подробнее
+      </a>
+    </div>
+  </div>
+</div>
+                                <!-- Динамический айдишник, бэкграунд, data-title -->
+<div id="1" class="event-card" style="" data-title="Здесь-как-на-небе">
+  <div class="event-card__text-box">
+    <!-- Динамический заголовок -->
+    <div class="event-card__title-box">
+      <h2 class="event-card__title">
+        Конференция прославления
+      </h2>
+    </div>
+    <!-- Динамическое описание -->
+    <div class="event-card__descr-box">
+      <p class="event-card__descr">Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati iste cum amet aperiam, nemo rerum suscipit quasi porro. Velit, tenetur. Repellat numquam quam, quod voluptatum odio neque distinctio in voluptatibus.</p>
+    </div>
+  </div>
+  <div class="event-card__btn-box">
+    <!-- Динамический тэг -->
+    <div class="event-card__tag-box">
+      <div class="event-card__tag">
+        Событие
+      </div>
+    </div>
+    <!-- Динамический href на событие -->
+    <div class="event-card__link-box">
+      <a class="event-card__link" href="#">
+        Подробнее
+      </a>
+    </div>
+  </div>
+</div>
+                                <!-- Динамический айдишник, бэкграунд, data-title -->
+<div id="1" class="event-card" style="" data-title="Здесь-как-на-небе">
+  <div class="event-card__text-box">
+    <!-- Динамический заголовок -->
+    <div class="event-card__title-box">
+      <h2 class="event-card__title">
+        Конференция прославления
+      </h2>
+    </div>
+    <!-- Динамическое описание -->
+    <div class="event-card__descr-box">
+      <p class="event-card__descr">Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati iste cum amet aperiam, nemo rerum suscipit quasi porro. Velit, tenetur. Repellat numquam quam, quod voluptatum odio neque distinctio in voluptatibus.</p>
+    </div>
+  </div>
+  <div class="event-card__btn-box">
+    <!-- Динамический тэг -->
+    <div class="event-card__tag-box">
+      <div class="event-card__tag">
+        Событие
+      </div>
+    </div>
+    <!-- Динамический href на событие -->
+    <div class="event-card__link-box">
+      <a class="event-card__link" href="#">
+        Подробнее
+      </a>
+    </div>
+  </div>
+</div>
+                                <!-- Динамический айдишник, бэкграунд, data-title -->
+<div id="1" class="event-card" style="" data-title="Здесь-как-на-небе">
+  <div class="event-card__text-box">
+    <!-- Динамический заголовок -->
+    <div class="event-card__title-box">
+      <h2 class="event-card__title">
+        Конференция прославления
+      </h2>
+    </div>
+    <!-- Динамическое описание -->
+    <div class="event-card__descr-box">
+      <p class="event-card__descr">Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati iste cum amet aperiam, nemo rerum suscipit quasi porro. Velit, tenetur. Repellat numquam quam, quod voluptatum odio neque distinctio in voluptatibus.</p>
+    </div>
+  </div>
+  <div class="event-card__btn-box">
+    <!-- Динамический тэг -->
+    <div class="event-card__tag-box">
+      <div class="event-card__tag">
+        Событие
+      </div>
+    </div>
+    <!-- Динамический href на событие -->
+    <div class="event-card__link-box">
+      <a class="event-card__link" href="#">
+        Подробнее
+      </a>
+    </div>
+  </div>
+</div>
                             </div>
                         </div>
                     </section>

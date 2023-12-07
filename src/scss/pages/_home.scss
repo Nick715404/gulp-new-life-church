@@ -1,7 +1,7 @@
 #home {
 
   #hero {
-    height: 100dvh;
+    height: 109dvh;
     display: flex;
     align-items: center;
     background: rgb(51, 51, 51);
@@ -9,7 +9,7 @@
 
     // Поменять вес шрифта!!!
 
-  .hero__title {
+    .hero__title {
       display: flex;
       flex-direction: column;
       font-family: $fontSecond;
@@ -22,7 +22,7 @@
       }
     }
 
-  .hero__span {
+    .hero__span {
 
       &--first {
         font-size: 50px;
@@ -139,8 +139,281 @@
   }
 
   #sermons {
-    .sermons__wrapper {
+
+    @include sectionMargin;
+
+    .sermons {
+
+      &__title {
+        font-size: clamp(30px, 4vw, 50px);
+      }
+
+      &__title-box {
+        margin-bottom: 3.5%;
+      }
+
+      &__content-box {
+        display: flex;
+        justify-content: space-between;
+
+        .sermons__video-box {
+          position: sticky;
+          top: 20px;
+          height: 100%;
+          width: 63.8%;
+          overflow: hidden;
+
+          #message-for-year {
+            margin-bottom: 3%;
+
+            .message-for-year__video {
+              background-image: url(../../img/png/year-message.png);
+              background-repeat: no-repeat;
+              background-position: center;
+              background-size: cover;
+              height: 470px;
+              width: 100%;
+              border-radius: 50px;
+            }
+          }
+
+          #last-sermons {
+            position: relative;
+
+            .last-sermons__title-box {
+              max-width: 500px;
+              margin-bottom: 3.2%;
+
+              .last-sermons__title {
+                font-size: clamp(25px, 5vw, 35px);
+                font-family: $fontSecond;
+                font-weight: 400;
+              }
+            }
+
+            .last-sermons__video-box {
+
+              .swiper-slide {
+                position: relative;
+                height: 250px;
+                width: 48.5%;
+                background-color: #356fcc;
+                border-radius: 30px;
+                overflow: hidden;
+
+                &::after {
+                  content: '';
+                  position: absolute;
+                  top: 35%;
+                  left: 42%;
+                  width: 80px;
+                  height: 80px;
+                  background-image: url(../../img/png/play-btn.png);
+                  background-repeat: no-repeat;
+                  background-size: contain;
+                  background-position: center;
+                }
+              }
+            }
+          }
+        }
+
+        .sermons__calendar-box {
+          width: 26.7%;
+
+          .calendar {
+
+            .list {
+
+              &__item {
+                border-top: 1px solid #DBDBDB;
+                padding: 55px 0;
+
+                &:last-child {
+                  border-bottom: 1px solid #DBDBDB;
+                }
+              }
+
+              &__item--weekend {
+
+                .list__day-number {
+                  color: $orangeCalendar;
+                }
+              }
+
+              &__date-wrapper {
+                display: flex;
+                align-items: center;
+                margin-bottom: 10px;
+              }
+
+              &__day-number {
+                font-size: clamp(40px, 5vw, 60px);
+                font-family: $fontSecond;
+                color: $moodGreen;
+                margin-right: 16%;
+              }
+
+              &__info {
+
+                font-family: $fontMain;
+                font-size: 18px;
+                font-weight: 300;
+                line-height: 120%;
+                color: $whiteGrey;
+
+                /* 19.2px */
+                &:nth-child(2) {
+                  color: #828282;
+                  font-size: 16px;
+                }
+              }
+
+              &__event {
+                display: flex;
+                align-items: center;
+                margin-bottom: 10px;
+              }
+
+              &__event-time-wrapper {
+                margin-right: 9%;
+              }
+
+              &__event-time {
+                border: 1px solid $moodGreen;
+                border-radius: 500px;
+                padding: 10px 16px;
+
+                color: $moodGreen;
+
+                font-family: $fontMain;
+                font-size: 14px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 100%;
+                /* 14px */
+                letter-spacing: 0.5px;
+                text-transform: uppercase;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  #events {
+    .event-card {
       display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      border-radius: 100px;
+      padding: 8.4% 6.75%;
+      height: 767px;
+      transition: all $transition;
+      overflow: hidden;
+      background: linear-gradient(149deg, #1950DD 18.56%, rgba(62, 110, 233, 0.76) 37.96%, rgba(39, 45, 198, 0.42) 51.63%, rgba(39, 36, 196, 0.47) 69.7%, rgba(28, 34, 185, 0.46) 82.49%, rgba(20, 27, 195, 0.67) 103.21%);
+
+      &:first-child {
+        // margin-bottom: 0;
+      }
+
+      &:hover {
+        // transform: translateY(-60px);
+      }
+
+      &__text-box {
+        .event-card__title-box {
+          margin-bottom: 2.6%;
+
+          .event-card__title {
+            font-size: clamp(40px, 6vw, 80px);
+            line-height: 100%;
+            text-transform: uppercase;
+            color: $white;
+          }
+        }
+
+        .event-card__descr-box {
+          max-width: 880px;
+
+          .event-card__descr {
+            color: $white;
+            font-size: clamp(20px, 4.7vw, 22px);
+            font-weight: 400;
+            line-height: normal;
+          }
+        }
+      }
+
+      &__btn-box {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .event-card__tag-box {
+
+          .event-card__tag {
+            color: $white;
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 100%;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+
+            border: 1px solid $white;
+            border-radius: 500px;
+            padding: 10px 16px;
+          }
+        }
+
+        .event-card__link-box {
+          .event-card__link {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 56px;
+            width: 223px;
+            border-radius: 100px;
+            background-color: $white;
+            color: $black;
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 100%;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            overflow: hidden;
+            transition: all $transition;
+
+            &:hover {
+              padding-left: 30px;
+
+              &::after {
+                transform: translateX(0px);
+                opacity: 1;
+              }
+            }
+
+            &::after {
+              content: '';
+              position: absolute;
+              top: 19px;
+              left: 33px;
+              width: 16px;
+              height: 16px;
+              background-image: url(../../img/svg/black-btn-arrow.svg);
+              background-repeat: no-repeat;
+              background-size: contain;
+              background-position: center;
+              transform: translateX(-55px);
+              opacity: 0;
+              transition: all .7s ease-in-out;
+            }
+          }
+        }
+      }
     }
   }
 }

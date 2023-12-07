@@ -7,6 +7,7 @@ $whiteGreyTrans: #828282;
 $black: #000;
 $titlesColor: #1C1C1C;
 $moodGreen: #008B8E;
+$orangeCalendar: #F28A91;
 $transition: .4s ease-in-out;
 
 // Burger Menu
@@ -14,9 +15,9 @@ $burgerColor: #131418;
 $burgerActiveColor: #fefefe;
 
 // Fonts
-$fontMain: 'MullerRegular';
-$fontMainMedium: 'MullerMedium';
-$fontSecond: "Unbounded";
+$fontMain: 'MullerRegular', sans-serif;
+$fontMainMedium: 'MullerMedium', sans-serif;
+$fontSecond: "Unbounded", sans-serif;
 
 // Helpers
 $index: calc(1vw + 1vh);

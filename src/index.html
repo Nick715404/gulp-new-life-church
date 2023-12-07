@@ -66,24 +66,46 @@
                     <section id="sermons" class="home__sermons sermons">
                         <div class="container">
                             <div class="sermons__wrapper">
-                                <div class="sermons__title-box">
-                                    <h2 class="sermons__title">Послание на год</h2>
-                                </div>
-                                <div class="">
+                                <div class="sermons__content-box">
                                     <div class="sermons__video-box video-box">
                                         <div id="message-for-year" class="message-for-year">
+                                            <div class="sermons__title-box">
+                                                <h2 class="sermons__title">Послание на год</h2>
+                                            </div>
                                             <div class="message-for-year__video"></div>
                                         </div>
                                         <div id="last-sermons" class="last-sermons">
                                             <div class="last-sermons__title-box">
                                                 <h3 class="last-sermons__title">Последние проповеди</h3>
                                             </div>
+                                            <!-- swiper box -->
+                                            <div class="last-sermons__video-box sermons-swiper">
+                                                <div class="swiper-wrapper">
+                                                    <div class="swiper-slide" id="slide-1"></div>
+                                                    <div class="swiper-slide" id="slide-2"></div>
+                                                    <div class="swiper-slide" id="slide-3"></div>
+                                                    <div class="swiper-slide" id="slide-4"></div>
+                                                </div>
+                                                <div class="swiper-button-next"></div>
+                                                <div class="swiper-button-prev"></div>
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="sermons__calendar-box">
-                                        календарь-компонент
+                                        @@include('./components/_calendar/Calendar.html')
                                     </div>
                                 </div>
+                            </div>
+                        </div>
+                    </section>
+                    <!-- Секция "События" -->
+                    <section id="events" class="home__events events">
+                        <div class="container">
+                            <div class="events__wrapper">
+                                @@include('./components/_eventCard/EventCard.html')
+                                @@include('./components/_eventCard/EventCard.html')
+                                @@include('./components/_eventCard/EventCard.html')
+                                @@include('./components/_eventCard/EventCard.html')
                             </div>
                         </div>
                     </section>
