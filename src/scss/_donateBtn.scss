@@ -1,25 +1,41 @@
-#donateBtn {
-    background: transparent;
-    border: 1px solid $white;
-    outline: none;
-    width: 211px;
-    height: 60px;
-    font-size: 18px;
-    font-weight: 500;
-    line-height: 100%;
-    text-transform: uppercase;
-    color: $white;
-    border-radius: 100px;
-    cursor: pointer;
-    transition: all .3s ease;
-    &:hover {
-        background-color: $white;
-        color: $black;
-    }
-}
+.donate-btn {
+  position: relative;
+  max-width: 211px;
+  outline: none;
+  border: 1px solid $white;
+  border-radius: 500px;
+  background: none;
+  color: $white;
+  font-size: clamp(14px, 2vw, 18px);
+  font-family: $fontMainMedium;
+  text-transform: uppercase;
+  padding: 1.4% 2%;
+  cursor: pointer;
+  transition: padding $transition;
+  overflow: hidden;
 
-@media (max-width: 1200px) {
-    #donateBtn {
-        display: none;
+  &:hover {
+    padding: 1.4% 2% 1.4% 2.9%;
+
+    &::after {
+      transform: translateX(0px);
+      opacity: 1;
     }
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 20px;
+    left: 16px;
+    width: 16px;
+    height: 16px;
+    background-image: url(../img/svg/white-btn-arrow.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    transform: translateX(-35px);
+    opacity: 0;
+    transition: all .7s ease-in-out;
+  }
 }

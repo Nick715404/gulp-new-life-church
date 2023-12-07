@@ -1,0 +1,38 @@
+$phone-width: 440px;
+$tablet-width: 768px;
+$desktop-width: 1024px;
+
+@mixin desktop {
+  @media (min-width: #{$desktop-width + 1}) {
+    @content;
+  }
+}
+
+@mixin phone {
+  @media (max-width: #{$tablet-width - 1px}) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (max-width: #{$desktop-width}) {
+    @content;
+  }
+}
+
+@mixin fontsize($desktop, $tablet, $phone) {
+  font-size: $desktop !important;
+
+  @include tablet {
+    font-size: $tablet !important;
+  }
+  @include phone {
+    font-size: $phone !important;
+  }
+}
+
+@mixin flex($js) {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: $js;
+}

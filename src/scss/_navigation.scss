@@ -1,0 +1,92 @@
+.nav {
+
+  max-width: 692px;
+  width: 100%;
+  font-size: 16px;
+  background: #101010;
+  border-radius: 500px;
+
+  &__wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.9% 1% 0.9% 1%;
+  }
+
+  &__item {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid transparent;
+    border-radius: 25px;
+    max-height: 41px;
+    padding: 2% 4% 2% 2%;
+    transition: all $transition;
+
+    &:hover {
+      border: 1px solid $white;
+    }
+  }
+
+  &__link {
+    color: #fff;
+    display: block;
+    outline: none;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 13px;
+      right: 10px;
+      width: 12px;
+      height: 12px;
+      background-image: url(../img/svg/arrow-down.svg);
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center;
+      transition: all $transition;
+    }
+
+    &:hover,
+    &:focus {
+
+      &::after {
+        transform: rotate(180deg);
+      }
+    }
+  }
+
+  .youtube {
+    padding: 0;
+    background: #fff;
+
+    &__link {
+      display: block;
+      width: 80px;
+      height: 45.67px;
+      background-image: url(../img/svg/socials/youtubeBlack.svg);
+      background-repeat: no-repeat;
+      background-size: 70%;
+      background-position: center;
+      transition: all $transition;
+
+      &:hover {
+        background-image: url(../img/svg/socials/youtubeRed.svg);
+      }
+
+      &::after {
+        content: none;
+      }
+    }
+  }
+}

@@ -1,26 +1,17 @@
 // Global SCSS-files imports
-@import './blocks/vars';
-@import './blocks/global';
 @import './blocks/fonts';
+@import './blocks/vars';
 @import './blocks/reset';
+@import './blocks/global';
+@import './blocks/responsives';
+@import './blocks/header';
 
 // Sections or Pages SCSS-files imports
-@import './header';
-@import './navbar';
-@import './logo';
-@import './donateBtn';
-@import './hero';
-@import './meetings';
-@import './socials';
-@import './message';
-@import './pastorMessage';
-@import './lastSermons';
-@import './calendar';
-@import './event';
-@import './events';
-@import './testimony';
-@import './connect';
+@import './pages/home';
 
+@import './navigation';
+@import './donateBtn';
+@import './socials';
 
 // Libs
 @import './libs/swiper';

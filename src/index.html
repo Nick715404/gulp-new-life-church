@@ -7,36 +7,94 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Церковь Новая Жизнь || Челябинск</title>
     <link rel="stylesheet" href="./css/style.min.css">
+    <script src="./js/scripts.min.js" defer></script>
 </head>
 
 <body class="main__body">
     <!-- Обертка страницы -->
     <div class="page">
-        <!-- Шапка -->
-        @@include('./html/_header.html')
-        <!-- Main Page -->
-        <main class="main">
-            <!-- Главный экран -->
-            @@include('./html/_hero.html')
-            <!-- Белая коробка -->
-            <div id="whiteBox">
-                <!-- Хотите познакомиться? -->
-                @@include('./html/_meetings.html')
-                <!-- Послание на год -->
-                @@include('./html/_message.html')
-                <!-- Мероприятия -->
-                @@include('./html/_events.html')
-                <!-- Мероприятия -->
-                @@include('./html/_testimony.html')
-                <!-- Хотите присоединиться к нам? -->
-                @@include('./html/_connect.html')
-            </div>
-        </main>
-        <!-- Футер -->
-        @@include('./html/_footer.html')
+        <!-- Хедер ко всем страницам -->
+        <div class="header-global">
+            @@include('./html/Header.html')
+        </div>
+        <!-- Тело страницы -->
+        <div id="home">
+            <main class="main">
+                <!-- Главный экран домашней страницы -->
+                <section id="hero" class="home__hero hero">
+                    <div class="container">
+                        <div class="hero__wrapper">
+                            <h1 class="hero__title">
+                                <span class="hero__span hero__span--first">Добро пожаловать в церковь</span>
+                                <span class="hero__span hero__span--second">"Новая жизнь"</span>
+                            </h1>
+                        </div>
+                    </div>
+                </section>
+                <div id="white-box" class="home__white-box white-box">
+                    <!-- Секция "Хотим познакомиться" -->
+                    <section id="meeting" class="home__meeting meeting">
+                        <div class="container container--small">
+                            <div class="meeting__wrapper">
+                                <div class="meeting__text-box text-box">
+                                    <div class="text-box__title-box">
+                                        <h2 class="text-box__title">Хотим поближе познакомиться с вами</h2>
+                                    </div>
+                                    <div class="text-box__content-box">
+                                        <p id="text1" class="text-box__text">В мире часто бывает очень тяжело одному,
+                                            когда вокруг суета, проблемы. Но Иисус Христос сделал все, для того, чтобы
+                                            ты больше не оставался один на один с ними. Церковь – это место, где тебя
+                                            принимают любым, молятся за твои проблемы и помогают ближе узнать Бога.</p>
+                                        <p id="text2" class="text-box__text">Будем рады видеть тебя на наших
+                                            Богослужениях каждое воскресенье в 10:00, 13:00, 16:00 (для молодежи) по
+                                            адресу г. Челябинск, ул. Красноармейская, 57.</p>
+                                    </div>
+                                </div>
+                                <div class="meeting__dynamic-box dynamic-box">
+                                    <div class="dynamic-box__link-box">
+                                        <a class="dynamic-box__link" href="#">О церкви</a>
+                                        <div class="dynamic-box__circle"></div>
+                                    </div>
+                                    <div class="dynamic-box__socials">
+                                        @@include('./components/_socials/Socials.html')
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <!-- Секция "Последни проповеди" -->
+                    <section id="sermons" class="home__sermons sermons">
+                        <div class="container">
+                            <div class="sermons__wrapper">
+                                <div class="sermons__title-box">
+                                    <h2 class="sermons__title">Послание на год</h2>
+                                </div>
+                                <div class="">
+                                    <div class="sermons__video-box video-box">
+                                        <div id="message-for-year" class="message-for-year">
+                                            <div class="message-for-year__video"></div>
+                                        </div>
+                                        <div id="last-sermons" class="last-sermons">
+                                            <div class="last-sermons__title-box">
+                                                <h3 class="last-sermons__title">Последние проповеди</h3>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="sermons__calendar-box">
+                                        календарь-компонент
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </main>
+        </div>
+        <!-- Подвал ко всем страницам -->
+        <div class="footer-global">
+            @@include('./html/Footer.html')
+        </div>
     </div>
 </body>
-
-<script src="./js/scripts.min.js"></script>
 
 </html>

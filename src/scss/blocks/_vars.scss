@@ -1,14 +1,3 @@
-// Container & Breakpoints
-@use 'sass:math';
-$containerWidth: 1440;
-$containerWidthSmall: 1375;
-$containerPadding: 40;
-$containerSidePadding: math.div($containerPadding, 2);
-$breakpoint1450: 1449.98 + px;
-$breakpoint1024: 1024.98 + px;
-$breakpoint992: 991.98 + px;
-$breakpoint768: 767.98 + px;
-$breakpoint480: 479.98 + px;
 
 // Colors
 $grey: #191919;
@@ -18,15 +7,43 @@ $whiteGreyTrans: #828282;
 $black: #000;
 $titlesColor: #1C1C1C;
 $moodGreen: #008B8E;
+$transition: .4s ease-in-out;
 
 // Burger Menu
-$burgerBreakpoint: $breakpoint1024;
 $burgerColor: #131418;
 $burgerActiveColor: #fefefe;
 
 // Fonts
 $fontMain: 'MullerRegular';
+$fontMainMedium: 'MullerMedium';
 $fontSecond: "Unbounded";
 
 // Helpers
 $index: calc(1vw + 1vh);
+$br100: 100px;
+
+// Section Margins
+$sectionMarginDesktop: 140px;
+$sectionMarginTablet: 120px;
+$sectionMarginPhone: 90px;
+
+@mixin sectionMargin {
+  @include desktop {
+    margin-bottom: $sectionMarginDesktop;
+  }
+
+  @include tablet {
+    margin-bottom: $sectionMarginTablet;
+  }
+
+  @include phone {
+    margin-bottom: $sectionMarginPhone;
+  }
+}
+
+// Font Size
+
+// $h1: 70px;
+$h1: clamp(25px, 5vw, 70px);
+$h2: clamp(30px, 4vw, 40px);
+$p: clamp(16px, 3vw, 20px);
