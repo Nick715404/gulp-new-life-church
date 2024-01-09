@@ -1,11 +1,29 @@
 #home {
 
   #hero {
-    height: 109dvh;
+    height: 110dvh;
     display: flex;
     align-items: center;
     background: rgb(51, 51, 51);
     border-radius: 100px 100px 0 0;
+
+    @include tablet {
+      border-radius: 80px 80px 0 0;
+    }
+
+    @include phone {
+      border-radius: 0;
+      height: 100dvh;
+    }
+
+    .hero__wrapper {
+
+      @include tablet {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    }
 
     // Поменять вес шрифта!!!
 
@@ -16,16 +34,24 @@
       font-weight: 400;
       color: #fff;
 
+      @include tablet {
+        text-align: center;
+      }
+
       span {
         display: block;
         width: fit-content;
+
+        @include tablet {
+          width: unset;
+        }
       }
     }
 
     .hero__span {
 
       &--first {
-        font-size: 50px;
+        font-size: clamp(20px, 5vw, 50px);
         max-width: 624px;
       }
 
@@ -46,21 +72,76 @@
         .text-box {
           display: flex;
           justify-content: space-between;
-          margin-bottom: 43px;
+          margin-bottom: 5.6%;
+          gap: 50px;
+
+          @include desktop {
+            @media (max-width: 1270px) {
+              gap: 30px;
+            }
+
+            @media (max-width: 1060px) {
+              gap: 0px;
+            }
+          }
+
+          @include tablet {
+            flex-direction: column;
+            gap: 30px;
+          }
+
+          &__title-box {
+            width: 42%;
+
+            @include desktop {
+              @media (max-width: 1460px) {
+                width: 45%;
+              }
+            }
+
+            @include tablet {
+              width: 68%;
+            }
+
+            @include phone {
+              @media (max-width: 554px) {
+                width: 320px;
+              }
+            }
+          }
 
           &__title {
-            font-size: clamp(30px, 3.05vw, 50px);
-            max-width: 520px;
+            font-size: clamp(30px, 3.6vw, 50px);
+            max-width: 90%;
+
+            @include tablet {
+              font-size: clamp(30px, 5.4vw, 50px);
+            }
+
+            @include phone {
+              width: 100%;
+              font-size: clamp(28px, 4.8vw, 50px);
+
+            }
           }
 
           &__content-box {
-            max-width: 650px;
+            // max-width: 650px;
+            width: 47%;
+
+            @include tablet {
+              width: 100%;
+            }
 
             .text-box__text {
-              font-size: clamp(16px, 4vw, 22px);
+              font-size: clamp(16px, 2vw, 22px);
               font-weight: 400;
               color: $whiteGrey;
               line-height: 130%;
+
+              @include tablet {
+                font-size: clamp(16px, 4vw, 22px);
+              }
             }
 
             #text1 {
@@ -83,7 +164,7 @@
             &:hover {
               .dynamic-box__circle {
                 &::after {
-                  right: 10px;
+                  left: 22px;
                 }
               }
             }
@@ -91,6 +172,17 @@
 
           &__socials {
             width: 47.5%;
+
+            @include tablet {
+              width: unset;
+            }
+
+            @include phone {
+              position: absolute;
+              top: 25px;
+              left: 50%;
+              transform: translateX(-50%);
+            }
           }
 
           &__link {
@@ -119,11 +211,16 @@
             border-radius: 100px;
             background-color: transparent;
 
+            @include phone {
+              width: 50px;
+              height: 50px;
+            }
+
             &::after {
               content: '';
               position: absolute;
               top: 17px;
-              right: 16px;
+              left: 17px;
               width: 24px;
               height: 24px;
               background-image: url(../../img/svg/ri_arrow-down-line.svg);
@@ -131,7 +228,22 @@
               background-position: center;
               background-size: contain;
               transition: $transition;
+
+              @include phone {
+                top: 12px;
+                left: 50%;
+                transform: translateX(-50%);
+              }
             }
+          }
+        }
+      }
+
+      .socials {
+
+        .list {
+          @include tablet {
+            width: auto;
           }
         }
       }
@@ -141,20 +253,35 @@
   #sermons {
 
     @include sectionMargin;
+    // display: none;
+
+    margin-bottom: 250px;
 
     .sermons {
 
       &__title {
-        font-size: clamp(30px, 4vw, 50px);
+        font-size: clamp(30px, 5vw, 50px);
+
+        @include phone {
+          max-width: 200px;
+        }
       }
 
       &__title-box {
         margin-bottom: 3.5%;
+
+        @include tablet {
+          margin-bottom: 5%;
+        }
       }
 
       &__content-box {
         display: flex;
         justify-content: space-between;
+
+        @include tablet {
+          flex-direction: column;
+        }
 
         .sermons__video-box {
           position: sticky;
@@ -163,17 +290,33 @@
           width: 63.8%;
           overflow: hidden;
 
+          @include tablet {
+            position: static;
+            width: 100%;
+            margin-bottom: 5%;
+            overflow: visible;
+          }
+
           #message-for-year {
             margin-bottom: 3%;
+
+            @include tablet {
+              margin-bottom: 5%;
+            }
 
             .message-for-year__video {
               background-image: url(../../img/png/year-message.png);
               background-repeat: no-repeat;
               background-position: center;
               background-size: cover;
-              height: 470px;
+              height: 450px;
               width: 100%;
               border-radius: 50px;
+
+              @include phone {
+                height: 245px;
+                border-radius: 30px;
+              }
             }
           }
 
@@ -184,8 +327,16 @@
               max-width: 500px;
               margin-bottom: 3.2%;
 
+              @include tablet {
+                margin-bottom: 5%;
+              }
+
+              @include phone {
+                max-width: 192px;
+              }
+
               .last-sermons__title {
-                font-size: clamp(25px, 5vw, 35px);
+                font-size: clamp(25px, 2.8vw, 35px);
                 font-family: $fontSecond;
                 font-weight: 400;
               }
@@ -195,8 +346,9 @@
 
               .swiper-slide {
                 position: relative;
-                height: 250px;
-                width: 48.5%;
+                height: 260px;
+                // width: 48.5%;
+                width: 406px;
                 background-color: #356fcc;
                 border-radius: 30px;
                 overflow: hidden;
@@ -204,8 +356,9 @@
                 &::after {
                   content: '';
                   position: absolute;
-                  top: 35%;
-                  left: 42%;
+                  top: 50%;
+                  left: 50%;
+                  transform: translate(-50%, -50%);
                   width: 80px;
                   height: 80px;
                   background-image: url(../../img/png/play-btn.png);
@@ -213,13 +366,27 @@
                   background-size: contain;
                   background-position: center;
                 }
+
+                @include tablet {
+                  height: 220px;
+                  width: 380px !important;
+                }
+
+                @include phone {
+                  height: 182px !important;
+                  width: 284px !important;
+                }
               }
             }
           }
         }
 
         .sermons__calendar-box {
-          width: 26.7%;
+          width: 30%;
+
+          @include tablet {
+            width: 100%;
+          }
 
           .calendar {
 
@@ -227,7 +394,19 @@
 
               &__item {
                 border-top: 1px solid #DBDBDB;
-                padding: 55px 0;
+                padding: 18% 0;
+
+                @include tablet {
+                  display: flex;
+                  flex-direction: row;
+                  align-items: center;
+                  padding: 6% 0;
+                }
+
+                @include phone {
+                  flex-direction: column;
+                  align-items: flex-start;
+                }
 
                 &:last-child {
                   border-bottom: 1px solid #DBDBDB;
@@ -245,10 +424,15 @@
                 display: flex;
                 align-items: center;
                 margin-bottom: 10px;
+
+                @include tablet {
+                  margin-bottom: 0;
+                  width: 40%;
+                }
               }
 
               &__day-number {
-                font-size: clamp(40px, 5vw, 60px);
+                font-size: clamp(40px, 7vw, 60px);
                 font-family: $fontSecond;
                 color: $moodGreen;
                 margin-right: 16%;
@@ -269,10 +453,27 @@
                 }
               }
 
+              &__events {
+                @include tablet {
+                  width: 60%;
+                }
+
+                @include phone {
+                  width: 100%;
+                }
+              }
+
               &__event {
                 display: flex;
                 align-items: center;
-                margin-bottom: 10px;
+
+                &:nth-child(2) {
+                  margin-top: 10px;
+                }
+              }
+
+              &__event-title {
+                font-weight: 400;
               }
 
               &__event-time-wrapper {
@@ -303,31 +504,66 @@
   }
 
   #events {
+
+    @include sectionMargin;
+    // display: none;
+
+    @include phone {}
+
     .event-card {
+      position: relative;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
       border-radius: 100px;
       padding: 8.4% 6.75%;
-      height: 767px;
+      height: 710px;
       transition: all $transition;
       overflow: hidden;
-      background: linear-gradient(149deg, #1950DD 18.56%, rgba(62, 110, 233, 0.76) 37.96%, rgba(39, 45, 198, 0.42) 51.63%, rgba(39, 36, 196, 0.47) 69.7%, rgba(28, 34, 185, 0.46) 82.49%, rgba(20, 27, 195, 0.67) 103.21%);
+      background-color: #8185bc;
+      -webkit-box-shadow: 0px 0px 16px -2px rgba(0, 0, 0, 0.24);
+      -moz-box-shadow: 0px 0px 16px -2px rgba(0, 0, 0, 0.24);
+      box-shadow: 0px 0px 16px -2px rgba(0, 0, 0, 0.24);
+      margin-top: -400px;
+      z-index: 999;
+
+
+      @include tablet {
+        height: 500px;
+        margin-top: -350px;
+        border-radius: 80px;
+
+      }
+
+      @include phone {
+        height: 400px;
+        margin-top: -315px;
+        border-radius: 30px;
+      }
 
       &:first-child {
-        // margin-bottom: 0;
+        margin-top: 0;
       }
 
       &:hover {
-        // transform: translateY(-60px);
+        // margin-top: -90px;
+        transform: translateY(-90px);
+
+        @include tablet {
+          transform: translateY(-30px);
+        }
       }
 
       &__text-box {
         .event-card__title-box {
           margin-bottom: 2.6%;
 
+          @include phone {
+            margin-bottom: 5%;
+          }
+
           .event-card__title {
-            font-size: clamp(40px, 6vw, 80px);
+            font-size: clamp(24px, 6vw, 80px);
             line-height: 100%;
             text-transform: uppercase;
             color: $white;
@@ -337,9 +573,13 @@
         .event-card__descr-box {
           max-width: 880px;
 
+          @include tablet {
+            max-width: unset;
+          }
+
           .event-card__descr {
             color: $white;
-            font-size: clamp(20px, 4.7vw, 22px);
+            font-size: clamp(18px, 4.7vw, 22px);
             font-weight: 400;
             line-height: normal;
           }
@@ -412,6 +652,202 @@
               transition: all .7s ease-in-out;
             }
           }
+        }
+      }
+
+      .event-card__link-absolute {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+
+  #prayer {
+
+    @include sectionMargin;
+    // display: none;
+
+    .prayer {
+
+      &__wrapper {
+        position: relative;
+        background-color: #3d3d3d;
+        border-radius: 30px;
+        padding: 4% 4.5%;
+        overflow: hidden;
+        background-image: url(../../img/png/overlay.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+
+        @include tablet {
+          background-position: right;
+        }
+
+        .prayer__title-box {
+
+          position: relative;
+          z-index: 999;
+          max-width: 650px;
+          margin-bottom: 2%;
+
+          @include tablet {
+           max-width: 100%;
+          }
+
+          .prayer__title {
+            font-size: clamp(22px, 4vw, 30px);
+            color: $white;
+            text-transform: uppercase;
+            font-weight: 400;
+            line-height: 150%;
+            /* 45px */
+            letter-spacing: 1px;
+
+            @include tablet {
+              text-align: center;
+              margin: 0 auto;
+            }
+          }
+        }
+
+        .prayer__link-box {
+
+          position: relative;
+          z-index: 999;
+
+          .prayer__link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1% 1.5%;
+            background-color: $white;
+            width: 220px;
+            height: 56px;
+            border-radius: 100px;
+            color: #191919;
+            font-family: $fontMain;
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 100%;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            transition: all $transition;
+
+            @include tablet {
+              margin: 0 auto;
+
+              &:hover {
+                width: 220px;
+                padding: 1% 1.5%;
+              }
+            }
+
+            &:hover {
+              width: 290px;
+              padding-left: 50px;
+
+              &::after {
+                transform: translateX(0px);
+                opacity: 1;
+              }
+            }
+
+            &::after {
+              content: '';
+              position: absolute;
+              top: 19px;
+              left: 33px;
+              width: 16px;
+              height: 16px;
+              background-image: url(../../img/svg/black-btn-arrow.svg);
+              background-repeat: no-repeat;
+              background-size: contain;
+              background-position: center;
+              transform: translateX(-55px);
+              opacity: 0;
+              transition: all .6s ease-in-out;
+
+              @include tablet {
+                left: 0;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  #connect {
+
+    @include sectionMargin;
+
+    .connect__wrapper {
+      position: relative;
+      max-width: 678px;
+      text-align: center;
+      margin: 0 auto;
+
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: -30%;
+        left: 5%;
+        width: 295px;
+        height: 117px;
+        background-image: url(../../img/svg/red-lines.svg);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+      }
+
+      &::before {
+        content: '';
+        position: absolute;
+        top: 58px;
+        right: -25%;
+        width: 315px;
+        height: 317px;
+        background-image: url(../../img/svg/green-arrow.svg);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+      }
+    }
+
+    .connect__title-box {
+
+      margin-bottom: 12.5%;
+
+      .connect__title {
+        font-size: clamp(30px, 4vw, 60px);
+        font-weight: 400;
+        line-height: 120%;
+      }
+    }
+
+    .connect__socials-box {
+      .list {
+
+        justify-content: center;
+        gap: 37px;
+
+        &__item {
+          width: 92px;
+          height: 92px;
+          background-color: $grey;
+
+          &:hover {
+            background-color: #f0ab4b;
+          }
+        }
+
+        &__link {
+          width: 37px;
+          height: 37px;
         }
       }
     }

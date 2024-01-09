@@ -57,6 +57,7 @@ html {
   background: #191919;
   font-family: "MullerRegular", sans-serif, sans-serif;
   font-size: 22px;
+  overflow-x: clip;
 }
 
 .main__body {
@@ -88,6 +89,7 @@ main {
 
 .container--small {
   max-width: 1375px !important;
+  width: 90%;
 }
 
 .white-box {
@@ -95,6 +97,7 @@ main {
   padding: 95px 0;
   border-radius: 100px;
   margin-top: -95px;
+  overflow-x: clip;
 }
 
 h2 {
@@ -104,11 +107,23 @@ h2 {
   /* 60px */
 }
 
+.logo {
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+}
+
+.logo img {
+  width: 100%;
+}
+
 .header {
   position: absolute;
   top: 60px;
-  left: 0;
+  left: 50%;
   width: 100%;
+  -webkit-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+          transform: translateX(-50%);
 }
 
 .header__wrapper {
@@ -123,8 +138,98 @@ h2 {
           justify-content: space-between;
 }
 
+.header__wrapper .burger-icon {
+  position: relative;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: none;
+  width: 90px;
+  height: 90px;
+  border-radius: 100%;
+  border: 1px solid #fff;
+  cursor: pointer;
+}
+
+.header__wrapper .burger-icon .burger-icon__line {
+  position: absolute;
+  display: block;
+  background-color: #fff;
+  height: 1px;
+  width: 36px;
+}
+
+.header__wrapper .burger-icon #firt-line {
+  opacity: 1;
+  top: 34px;
+}
+
+.header__wrapper .burger-icon #second-line {
+  width: 45px;
+  top: 44px;
+}
+
+.header__wrapper .burger-icon #third-line {
+  width: 45px;
+  top: 44px;
+}
+
+.header__wrapper .burger-icon #fourth-line {
+  opacity: 1;
+  top: 54px;
+}
+
+.header__wrapper .active .burger-icon__line {
+  -webkit-transition: top 0.3s ease-in-out, opacity 0.1s ease-in-out 0.3s, -webkit-transform 0.5s ease-in-out 0.3s;
+  transition: top 0.3s ease-in-out, opacity 0.1s ease-in-out 0.3s, -webkit-transform 0.5s ease-in-out 0.3s;
+  transition: top 0.3s ease-in-out, opacity 0.1s ease-in-out 0.3s, transform 0.5s ease-in-out 0.3s;
+  transition: top 0.3s ease-in-out, opacity 0.1s ease-in-out 0.3s, transform 0.5s ease-in-out 0.3s, -webkit-transform 0.5s ease-in-out 0.3s;
+}
+
+.header__wrapper .active #firt-line {
+  opacity: 0;
+  top: 44px;
+}
+
+.header__wrapper .active #second-line {
+  width: 45px;
+  top: 44px;
+  -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+.header__wrapper .active #third-line {
+  width: 45px;
+  top: 44px;
+  -webkit-transform: rotate(-45deg);
+      -ms-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+
+.header__wrapper .active #fourth-line {
+  opacity: 0;
+  top: 44px;
+}
+
+.burger-menu {
+  position: absolute;
+}
+
+.footer__wrapper {
+  margin-top: 30%;
+  height: 334px;
+}
+
 #home #hero {
-  height: 109dvh;
+  height: 110dvh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -156,7 +261,7 @@ h2 {
 }
 
 #home #hero .hero__span--first {
-  font-size: 50px;
+  font-size: clamp(20px, 5vw, 50px);
   max-width: 624px;
 }
 
@@ -172,20 +277,25 @@ h2 {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  margin-bottom: 43px;
+  margin-bottom: 5.6%;
+  gap: 50px;
+}
+
+#home #meeting .meeting__wrapper .text-box__title-box {
+  width: 42%;
 }
 
 #home #meeting .meeting__wrapper .text-box__title {
-  font-size: clamp(30px, 3.05vw, 50px);
-  max-width: 520px;
+  font-size: clamp(30px, 3.6vw, 50px);
+  max-width: 90%;
 }
 
 #home #meeting .meeting__wrapper .text-box__content-box {
-  max-width: 650px;
+  width: 47%;
 }
 
 #home #meeting .meeting__wrapper .text-box__content-box .text-box__text {
-  font-size: clamp(16px, 4vw, 22px);
+  font-size: clamp(16px, 2vw, 22px);
   font-weight: 400;
   color: #333;
   line-height: 130%;
@@ -219,7 +329,7 @@ h2 {
 }
 
 #home #meeting .meeting__wrapper .dynamic-box__link-box:hover .dynamic-box__circle::after {
-  right: 10px;
+  left: 22px;
 }
 
 #home #meeting .meeting__wrapper .dynamic-box__socials {
@@ -257,7 +367,7 @@ h2 {
   content: "";
   position: absolute;
   top: 17px;
-  right: 16px;
+  left: 17px;
   width: 24px;
   height: 24px;
   background-image: url(../../img/svg/ri_arrow-down-line.svg);
@@ -268,8 +378,12 @@ h2 {
   transition: 0.4s ease-in-out;
 }
 
+#home #sermons {
+  margin-bottom: 250px;
+}
+
 #home #sermons .sermons__title {
-  font-size: clamp(30px, 4vw, 50px);
+  font-size: clamp(30px, 5vw, 50px);
 }
 
 #home #sermons .sermons__title-box {
@@ -302,7 +416,7 @@ h2 {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  height: 470px;
+  height: 450px;
   width: 100%;
   border-radius: 50px;
 }
@@ -317,15 +431,15 @@ h2 {
 }
 
 #home #sermons .sermons__content-box .sermons__video-box #last-sermons .last-sermons__title-box .last-sermons__title {
-  font-size: clamp(25px, 5vw, 35px);
+  font-size: clamp(25px, 2.8vw, 35px);
   font-family: "Unbounded", sans-serif;
   font-weight: 400;
 }
 
 #home #sermons .sermons__content-box .sermons__video-box #last-sermons .last-sermons__video-box .swiper-slide {
   position: relative;
-  height: 250px;
-  width: 48.5%;
+  height: 260px;
+  width: 406px;
   background-color: #356fcc;
   border-radius: 30px;
   overflow: hidden;
@@ -334,8 +448,11 @@ h2 {
 #home #sermons .sermons__content-box .sermons__video-box #last-sermons .last-sermons__video-box .swiper-slide::after {
   content: "";
   position: absolute;
-  top: 35%;
-  left: 42%;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
   width: 80px;
   height: 80px;
   background-image: url(../../img/png/play-btn.png);
@@ -345,12 +462,12 @@ h2 {
 }
 
 #home #sermons .sermons__content-box .sermons__calendar-box {
-  width: 26.7%;
+  width: 30%;
 }
 
 #home #sermons .sermons__content-box .sermons__calendar-box .calendar .list__item {
   border-top: 1px solid #DBDBDB;
-  padding: 55px 0;
+  padding: 18% 0;
 }
 
 #home #sermons .sermons__content-box .sermons__calendar-box .calendar .list__item:last-child {
@@ -372,7 +489,7 @@ h2 {
 }
 
 #home #sermons .sermons__content-box .sermons__calendar-box .calendar .list__day-number {
-  font-size: clamp(40px, 5vw, 60px);
+  font-size: clamp(40px, 7vw, 60px);
   font-family: "Unbounded", sans-serif;
   color: #008B8E;
   margin-right: 16%;
@@ -399,7 +516,14 @@ h2 {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin-bottom: 10px;
+}
+
+#home #sermons .sermons__content-box .sermons__calendar-box .calendar .list__event:nth-child(2) {
+  margin-top: 10px;
+}
+
+#home #sermons .sermons__content-box .sermons__calendar-box .calendar .list__event-title {
+  font-weight: 400;
 }
 
 #home #sermons .sermons__content-box .sermons__calendar-box .calendar .list__event-time-wrapper {
@@ -422,6 +546,7 @@ h2 {
 }
 
 #home #events .event-card {
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -434,11 +559,25 @@ h2 {
           justify-content: space-between;
   border-radius: 100px;
   padding: 8.4% 6.75%;
-  height: 767px;
+  height: 710px;
   -webkit-transition: all 0.4s ease-in-out;
   transition: all 0.4s ease-in-out;
   overflow: hidden;
-  background: linear-gradient(149deg, #1950DD 18.56%, rgba(62, 110, 233, 0.76) 37.96%, rgba(39, 45, 198, 0.42) 51.63%, rgba(39, 36, 196, 0.47) 69.7%, rgba(28, 34, 185, 0.46) 82.49%, rgba(20, 27, 195, 0.67) 103.21%);
+  background-color: #8185bc;
+  -webkit-box-shadow: 0px 0px 16px -2px rgba(0, 0, 0, 0.24);
+  box-shadow: 0px 0px 16px -2px rgba(0, 0, 0, 0.24);
+  margin-top: -400px;
+  z-index: 999;
+}
+
+#home #events .event-card:first-child {
+  margin-top: 0;
+}
+
+#home #events .event-card:hover {
+  -webkit-transform: translateY(-90px);
+      -ms-transform: translateY(-90px);
+          transform: translateY(-90px);
 }
 
 #home #events .event-card__text-box .event-card__title-box {
@@ -446,7 +585,7 @@ h2 {
 }
 
 #home #events .event-card__text-box .event-card__title-box .event-card__title {
-  font-size: clamp(40px, 6vw, 80px);
+  font-size: clamp(24px, 6vw, 80px);
   line-height: 100%;
   text-transform: uppercase;
   color: #fff;
@@ -458,7 +597,7 @@ h2 {
 
 #home #events .event-card__text-box .event-card__descr-box .event-card__descr {
   color: #fff;
-  font-size: clamp(20px, 4.7vw, 22px);
+  font-size: clamp(18px, 4.7vw, 22px);
   font-weight: 400;
   line-height: normal;
 }
@@ -542,6 +681,170 @@ h2 {
   opacity: 0;
   -webkit-transition: all 0.7s ease-in-out;
   transition: all 0.7s ease-in-out;
+}
+
+#home #events .event-card .event-card__link-absolute {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+#home #prayer .prayer__wrapper {
+  position: relative;
+  background-color: #3d3d3d;
+  border-radius: 30px;
+  padding: 4% 4.5%;
+  overflow: hidden;
+  background-image: url(../../img/png/overlay.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+#home #prayer .prayer__wrapper .prayer__title-box {
+  position: relative;
+  z-index: 999;
+  max-width: 650px;
+  margin-bottom: 2%;
+}
+
+#home #prayer .prayer__wrapper .prayer__title-box .prayer__title {
+  font-size: clamp(22px, 4vw, 30px);
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: 400;
+  line-height: 150%;
+  /* 45px */
+  letter-spacing: 1px;
+}
+
+#home #prayer .prayer__wrapper .prayer__link-box {
+  position: relative;
+  z-index: 999;
+}
+
+#home #prayer .prayer__wrapper .prayer__link-box .prayer__link {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 1% 1.5%;
+  background-color: #fff;
+  width: 220px;
+  height: 56px;
+  border-radius: 100px;
+  color: #191919;
+  font-family: "MullerRegular", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 100%;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+}
+
+#home #prayer .prayer__wrapper .prayer__link-box .prayer__link:hover {
+  width: 290px;
+  padding-left: 50px;
+}
+
+#home #prayer .prayer__wrapper .prayer__link-box .prayer__link:hover::after {
+  -webkit-transform: translateX(0px);
+      -ms-transform: translateX(0px);
+          transform: translateX(0px);
+  opacity: 1;
+}
+
+#home #prayer .prayer__wrapper .prayer__link-box .prayer__link::after {
+  content: "";
+  position: absolute;
+  top: 19px;
+  left: 33px;
+  width: 16px;
+  height: 16px;
+  background-image: url(../../img/svg/black-btn-arrow.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  -webkit-transform: translateX(-55px);
+      -ms-transform: translateX(-55px);
+          transform: translateX(-55px);
+  opacity: 0;
+  -webkit-transition: all 0.6s ease-in-out;
+  transition: all 0.6s ease-in-out;
+}
+
+#home #connect .connect__wrapper {
+  position: relative;
+  max-width: 678px;
+  text-align: center;
+  margin: 0 auto;
+}
+
+#home #connect .connect__wrapper::after {
+  content: "";
+  position: absolute;
+  bottom: -30%;
+  left: 5%;
+  width: 295px;
+  height: 117px;
+  background-image: url(../../img/svg/red-lines.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+#home #connect .connect__wrapper::before {
+  content: "";
+  position: absolute;
+  top: 58px;
+  right: -25%;
+  width: 315px;
+  height: 317px;
+  background-image: url(../../img/svg/green-arrow.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+#home #connect .connect__title-box {
+  margin-bottom: 12.5%;
+}
+
+#home #connect .connect__title-box .connect__title {
+  font-size: clamp(30px, 4vw, 60px);
+  font-weight: 400;
+  line-height: 120%;
+}
+
+#home #connect .connect__socials-box .list {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 37px;
+}
+
+#home #connect .connect__socials-box .list__item {
+  width: 92px;
+  height: 92px;
+  background-color: #191919;
+}
+
+#home #connect .connect__socials-box .list__item:hover {
+  background-color: #f0ab4b;
+}
+
+#home #connect .connect__socials-box .list__link {
+  width: 37px;
+  height: 37px;
 }
 
 .nav {
@@ -653,49 +956,24 @@ h2 {
 .donate-btn {
   position: relative;
   max-width: 211px;
+  width: 100%;
   outline: none;
   border: 1px solid #fff;
   border-radius: 500px;
   background: none;
   color: #fff;
-  font-size: clamp(14px, 2vw, 18px);
+  font-size: clamp(14px, 1.4vw, 18px);
   font-family: "MullerMedium", sans-serif;
   text-transform: uppercase;
   padding: 1.4% 2%;
   cursor: pointer;
-  -webkit-transition: padding 0.4s ease-in-out;
-  transition: padding 0.4s ease-in-out;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
   overflow: hidden;
 }
 
 .donate-btn:hover {
-  padding: 1.4% 2% 1.4% 2.9%;
-}
-
-.donate-btn:hover::after {
-  -webkit-transform: translateX(0px);
-      -ms-transform: translateX(0px);
-          transform: translateX(0px);
-  opacity: 1;
-}
-
-.donate-btn::after {
-  content: "";
-  position: absolute;
-  top: 20px;
-  left: 16px;
-  width: 16px;
-  height: 16px;
-  background-image: url(../img/svg/white-btn-arrow.svg);
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: center;
-  -webkit-transform: translateX(-35px);
-      -ms-transform: translateX(-35px);
-          transform: translateX(-35px);
-  opacity: 0;
-  -webkit-transition: all 0.7s ease-in-out;
-  transition: all 0.7s ease-in-out;
+  background-color: #f0ab4b;
 }
 
 .socials .list {
@@ -1568,24 +1846,436 @@ button.swiper-pagination-bullet {
   #home #sermons {
     margin-bottom: 140px;
   }
+
+  #home #events {
+    margin-bottom: 140px;
+  }
+
+  #home #prayer {
+    margin-bottom: 140px;
+  }
+
+  #home #connect {
+    margin-bottom: 140px;
+  }
 }
 
 @media (max-width: 1024px) {
+  .white-box {
+    padding: 7% 0;
+  }
+
+  .header {
+    top: 50px;
+  }
+
+  .header__wrapper .burger-icon {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+
+  #home #hero {
+    border-radius: 80px 80px 0 0;
+  }
+
+  #home #hero .hero__wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+
+  #home #hero .hero__title {
+    text-align: center;
+  }
+
+  #home #hero .hero__title span {
+    width: unset;
+  }
+
   #home #meeting {
     margin-bottom: 120px;
   }
 
+  #home #meeting .meeting__wrapper .text-box {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    gap: 30px;
+  }
+
+  #home #meeting .meeting__wrapper .text-box__title-box {
+    width: 68%;
+  }
+
+  #home #meeting .meeting__wrapper .text-box__title {
+    font-size: clamp(30px, 5.4vw, 50px);
+  }
+
+  #home #meeting .meeting__wrapper .text-box__content-box {
+    width: 100%;
+  }
+
+  #home #meeting .meeting__wrapper .text-box__content-box .text-box__text {
+    font-size: clamp(16px, 4vw, 22px);
+  }
+
+  #home #meeting .meeting__wrapper .dynamic-box__socials {
+    width: unset;
+  }
+
+  #home #meeting .meeting .socials .list {
+    width: auto;
+  }
+
   #home #sermons {
     margin-bottom: 120px;
+  }
+
+  #home #sermons .sermons__title-box {
+    margin-bottom: 5%;
+  }
+
+  #home #sermons .sermons__content-box {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+
+  #home #sermons .sermons__content-box .sermons__video-box {
+    position: static;
+    width: 100%;
+    margin-bottom: 5%;
+    overflow: visible;
+  }
+
+  #home #sermons .sermons__content-box .sermons__video-box #message-for-year {
+    margin-bottom: 5%;
+  }
+
+  #home #sermons .sermons__content-box .sermons__video-box #last-sermons .last-sermons__title-box {
+    margin-bottom: 5%;
+  }
+
+  #home #sermons .sermons__content-box .sermons__video-box #last-sermons .last-sermons__video-box .swiper-slide {
+    height: 220px;
+    width: 380px !important;
+  }
+
+  #home #sermons .sermons__content-box .sermons__calendar-box {
+    width: 100%;
+  }
+
+  #home #sermons .sermons__content-box .sermons__calendar-box .calendar .list__item {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    padding: 6% 0;
+  }
+
+  #home #sermons .sermons__content-box .sermons__calendar-box .calendar .list__date-wrapper {
+    margin-bottom: 0;
+    width: 40%;
+  }
+
+  #home #sermons .sermons__content-box .sermons__calendar-box .calendar .list__events {
+    width: 60%;
+  }
+
+  #home #events {
+    margin-bottom: 120px;
+  }
+
+  #home #events .event-card {
+    height: 500px;
+    margin-top: -350px;
+    border-radius: 80px;
+  }
+
+  #home #events .event-card:hover {
+    -webkit-transform: translateY(-30px);
+        -ms-transform: translateY(-30px);
+            transform: translateY(-30px);
+  }
+
+  #home #events .event-card__text-box .event-card__descr-box {
+    max-width: unset;
+  }
+
+  #home #prayer {
+    margin-bottom: 120px;
+  }
+
+  #home #prayer .prayer__wrapper {
+    background-position: right;
+  }
+
+  #home #prayer .prayer__wrapper .prayer__title-box {
+    max-width: 100%;
+  }
+
+  #home #prayer .prayer__wrapper .prayer__title-box .prayer__title {
+    text-align: center;
+    margin: 0 auto;
+  }
+
+  #home #prayer .prayer__wrapper .prayer__link-box .prayer__link {
+    margin: 0 auto;
+  }
+
+  #home #prayer .prayer__wrapper .prayer__link-box .prayer__link:hover {
+    width: 220px;
+    padding: 1% 1.5%;
+  }
+
+  #home #prayer .prayer__wrapper .prayer__link-box .prayer__link::after {
+    left: 0;
+  }
+
+  #home #connect {
+    margin-bottom: 120px;
+  }
+
+  .nav {
+    display: none;
+  }
+
+  .donate-btn {
+    display: none;
+  }
+
+  .socials .list__item {
+    width: 50px;
+    height: 50px;
   }
 }
 
 @media (max-width: 767px) {
+  .main__body {
+    padding: 0;
+  }
+
+  .white-box {
+    border-radius: 50px;
+    padding: 95px 0 0 0;
+    position: relative;
+  }
+
+  .logo {
+    width: 29%;
+  }
+
+  .header {
+    top: 45px;
+  }
+
+  #home #hero {
+    border-radius: 0;
+    height: 100dvh;
+  }
+
   #home #meeting {
     margin-bottom: 90px;
   }
 
+  #home #meeting .meeting__wrapper .text-box__title {
+    width: 100%;
+    font-size: clamp(28px, 4.8vw, 50px);
+  }
+
+  #home #meeting .meeting__wrapper .dynamic-box__socials {
+    position: absolute;
+    top: 25px;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+            transform: translateX(-50%);
+  }
+
+  #home #meeting .meeting__wrapper .dynamic-box__circle {
+    width: 50px;
+    height: 50px;
+  }
+
+  #home #meeting .meeting__wrapper .dynamic-box__circle::after {
+    top: 12px;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+            transform: translateX(-50%);
+  }
+
   #home #sermons {
     margin-bottom: 90px;
+  }
+
+  #home #sermons .sermons__title {
+    max-width: 200px;
+  }
+
+  #home #sermons .sermons__content-box .sermons__video-box #message-for-year .message-for-year__video {
+    height: 245px;
+    border-radius: 30px;
+  }
+
+  #home #sermons .sermons__content-box .sermons__video-box #last-sermons .last-sermons__title-box {
+    max-width: 192px;
+  }
+
+  #home #sermons .sermons__content-box .sermons__video-box #last-sermons .last-sermons__video-box .swiper-slide {
+    height: 182px !important;
+    width: 284px !important;
+  }
+
+  #home #sermons .sermons__content-box .sermons__calendar-box .calendar .list__item {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
+
+  #home #sermons .sermons__content-box .sermons__calendar-box .calendar .list__events {
+    width: 100%;
+  }
+
+  #home #events {
+    margin-bottom: 90px;
+  }
+
+  #home #events .event-card {
+    height: 400px;
+    margin-top: -315px;
+    border-radius: 30px;
+  }
+
+  #home #events .event-card__text-box .event-card__title-box {
+    margin-bottom: 5%;
+  }
+
+  #home #prayer {
+    margin-bottom: 90px;
+  }
+
+  #home #connect {
+    margin-bottom: 90px;
+  }
+
+  .swiper-button-next,
+  .swiper-button-prev {
+    top: 36px;
+  }
+
+  .swiper-button-prev,
+  .swiper-rtl .swiper-button-next {
+    right: 55px;
+  }
+
+  .swiper-button-next,
+  .swiper-rtl .swiper-button-prev {
+    right: 0;
+  }
+}
+
+@media (max-width: 767px) and (max-width: 490px) {
+  .header__wrapper .burger-icon {
+    width: 50px;
+    height: 50px;
+  }
+
+  .header__wrapper .burger-icon .burger-icon__line {
+    width: 20px;
+  }
+
+  .header__wrapper .burger-icon #firt-line {
+    top: 18px;
+  }
+
+  .header__wrapper .burger-icon #second-line {
+    top: 24px;
+    width: 25px;
+  }
+
+  .header__wrapper .burger-icon #third-line {
+    top: 24px;
+    width: 25px;
+  }
+
+  .header__wrapper .burger-icon #fourth-line {
+    top: 30px;
+  }
+
+  .header__wrapper .active #firt-line {
+    top: 24px;
+  }
+
+  .header__wrapper .active #fourth-line {
+    top: 24px;
+  }
+}
+
+@media (max-width: 767px) and (max-width: 554px) {
+  #home #meeting .meeting__wrapper .text-box__title-box {
+    width: 320px;
+  }
+}
+
+@media (min-width: 1025px) and (max-width: 1230px) {
+  .logo {
+    width: 10%;
+  }
+
+  .nav {
+    font-size: 14px;
+    max-width: unset;
+    width: 60%;
+  }
+
+  .nav__link::after {
+    right: 5px;
+    top: 12px;
+  }
+
+  .nav .youtube__link {
+    width: 70px;
+  }
+
+  .donate-btn {
+    width: 180px;
+  }
+}
+
+@media (min-width: 1025px) and (max-width: 1270px) {
+  #home #meeting .meeting__wrapper .text-box {
+    gap: 30px;
+  }
+}
+
+@media (min-width: 1025px) and (max-width: 1060px) {
+  #home #meeting .meeting__wrapper .text-box {
+    gap: 0px;
+  }
+}
+
+@media (min-width: 1025px) and (max-width: 1460px) {
+  #home #meeting .meeting__wrapper .text-box__title-box {
+    width: 45%;
   }
 }

@@ -46,6 +46,36 @@
   </ul>
 </nav>
       <button class="donate-btn">Пожертвовать</button>
+      <div class="burger-menu__icon burger-icon">
+        <span id="firt-line" class="burger-icon__line"></span>
+        <span id="second-line" class="burger-icon__line"></span>
+        <span id="third-line" class="burger-icon__line"></span>
+        <span id="fourth-line" class="burger-icon__line"></span>
+      </div>
+      <div class="burger-menu">
+  <div class="burger-menu__menu menu-wrapper">
+    <ul class="menu-wrapper__list list">
+      <li class="list__item">
+        <a href="#" class="list__link"></a>
+      </li>
+      <li class="list__item">
+        <a href="#" class="list__link"></a>
+      </li>
+      <li class="list__item">
+        <a href="#" class="list__link"></a>
+      </li>
+      <li class="list__item">
+        <a href="#" class="list__link"></a>
+      </li>
+      <li class="list__item">
+        <a href="#" class="list__link"></a>
+      </li>
+      <li class="list__item">
+        <a href="#" class="list__link"></a>
+      </li>
+    </ul>
+  </div>
+</div>
     </div>
   </div>
 </header>
@@ -112,12 +142,12 @@
                     <section id="sermons" class="home__sermons sermons">
                         <div class="container">
                             <div class="sermons__wrapper">
+                                <div class="sermons__title-box">
+                                    <h2 class="sermons__title">Послание на год</h2>
+                                </div>
                                 <div class="sermons__content-box">
                                     <div class="sermons__video-box video-box">
                                         <div id="message-for-year" class="message-for-year">
-                                            <div class="sermons__title-box">
-                                                <h2 class="sermons__title">Послание на год</h2>
-                                            </div>
                                             <div class="message-for-year__video"></div>
                                         </div>
                                         <div id="last-sermons" class="last-sermons">
@@ -275,13 +305,9 @@
         Событие
       </div>
     </div>
-    <!-- Динамический href на событие -->
-    <div class="event-card__link-box">
-      <a class="event-card__link" href="#">
-        Подробнее
-      </a>
-    </div>
   </div>
+  <!-- Динамический href на событие -->
+  <a class="event-card__link-absolute" href="#"></a>
 </div>
                                 <!-- Динамический айдишник, бэкграунд, data-title -->
 <div id="1" class="event-card" style="" data-title="Здесь-как-на-небе">
@@ -304,13 +330,9 @@
         Событие
       </div>
     </div>
-    <!-- Динамический href на событие -->
-    <div class="event-card__link-box">
-      <a class="event-card__link" href="#">
-        Подробнее
-      </a>
-    </div>
   </div>
+  <!-- Динамический href на событие -->
+  <a class="event-card__link-absolute" href="#"></a>
 </div>
                                 <!-- Динамический айдишник, бэкграунд, data-title -->
 <div id="1" class="event-card" style="" data-title="Здесь-как-на-небе">
@@ -333,13 +355,9 @@
         Событие
       </div>
     </div>
-    <!-- Динамический href на событие -->
-    <div class="event-card__link-box">
-      <a class="event-card__link" href="#">
-        Подробнее
-      </a>
-    </div>
   </div>
+  <!-- Динамический href на событие -->
+  <a class="event-card__link-absolute" href="#"></a>
 </div>
                                 <!-- Динамический айдишник, бэкграунд, data-title -->
 <div id="1" class="event-card" style="" data-title="Здесь-как-на-небе">
@@ -362,14 +380,51 @@
         Событие
       </div>
     </div>
-    <!-- Динамический href на событие -->
-    <div class="event-card__link-box">
-      <a class="event-card__link" href="#">
-        Подробнее
-      </a>
-    </div>
   </div>
+  <!-- Динамический href на событие -->
+  <a class="event-card__link-absolute" href="#"></a>
 </div>
+                            </div>
+                        </div>
+                    </section>
+                    <!-- Секция "События" -->
+                    <section id="prayer" class="home__prayer prayer">
+                        <div class="container">
+                            <div class="prayer__wrapper">
+                                <div class="prayer__title-box">
+                                    <h2 class="prayer__title">У вас есть молитвенная нужда или свидетельство?</h2>
+                                </div>
+                                <div class="prayer__link-box">
+                                    <a class="prayer__link" href="#">Хочу поделиться</a>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <!-- Секция "Хотите присоедениться?" -->
+                    <section id="connect" class="home__connect connect">
+                        <div class="container container--small">
+                            <div class="connect__wrapper">
+                                <div class="connect__title-box">
+                                    <h2 class="connect__title">Хотите присоединиться к нам в соц сетях?</h2>
+                                </div>
+                                <div class="connect__socials-box">
+                                    <div class="socials">
+                                        <ul class="socials__list list">
+                                            <li class="list__item">
+                                                <a class="list__link" id="instagrammLink" href="#"
+                                                    style="background-image: url(./img/svg/socials/inst-white.svg);"></a>
+                                            </li>
+                                            <li class="list__item">
+                                                <a class="list__link" id="twitterLink" href="#"
+                                                    style="background-image: url(./img/svg/socials/twitter-white.svg);"></a>
+                                            </li>
+                                            <li class="list__item">
+                                                <a class="list__link" id="facebookLink" href="#"
+                                                    style="background-image: url(./img/svg/socials/facebook-white.svg);"></a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </section>
@@ -378,7 +433,15 @@
         </div>
         <!-- Подвал ко всем страницам -->
         <div class="footer-global">
-            
+            <footer class="footer">
+  <div class="container container--small">
+    <div class="footer__wrapper">
+      <div class="footer__info"></div>
+      <div class="footer__about"></div>
+      <div class="footer__"></div>
+    </div>
+  </div>
+</footer>
         </div>
     </div>
 </body>

@@ -2,9 +2,10 @@
 @import './blocks/fonts';
 @import './blocks/vars';
 @import './blocks/reset';
-@import './blocks/global';
 @import './blocks/responsives';
+@import './blocks/global';
 @import './blocks/header';
+@import './blocks/footer';
 
 // Sections or Pages SCSS-files imports
 @import './pages/home';

@@ -1,41 +1,56 @@
 .donate-btn {
   position: relative;
   max-width: 211px;
+  width: 100%;
   outline: none;
   border: 1px solid $white;
   border-radius: 500px;
   background: none;
   color: $white;
-  font-size: clamp(14px, 2vw, 18px);
+  font-size: clamp(14px, 1.4vw, 18px);
   font-family: $fontMainMedium;
   text-transform: uppercase;
   padding: 1.4% 2%;
   cursor: pointer;
-  transition: padding $transition;
+  transition: all $transition;
   overflow: hidden;
 
-  &:hover {
-    padding: 1.4% 2% 1.4% 2.9%;
-
-    &::after {
-      transform: translateX(0px);
-      opacity: 1;
+  @include desktop {
+    @media (max-width: 1230px) {
+      width: 180px;
     }
   }
 
-  &::after {
-    content: '';
-    position: absolute;
-    top: 20px;
-    left: 16px;
-    width: 16px;
-    height: 16px;
-    background-image: url(../img/svg/white-btn-arrow.svg);
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: center;
-    transform: translateX(-35px);
-    opacity: 0;
-    transition: all .7s ease-in-out;
+  @include tablet {
+    display: none;
   }
+
+  &:hover {
+    background-color: #f0ab4b;
+  }
+
+  // &:hover {
+  //   padding: 1.4% 2% 1.4% 2.9%;
+
+  //   &::after {
+  //     transform: translateX(0px);
+  //     opacity: 1;
+  //   }
+  // }
+
+  // &::after {
+  //   content: '';
+  //   position: absolute;
+  //   top: 18px;
+  //   left: 14px;
+  //   width: 16px;
+  //   height: 16px;
+  //   background-image: url(../img/svg/white-btn-arrow.svg);
+  //   background-repeat: no-repeat;
+  //   background-size: contain;
+  //   background-position: center;
+  //   transform: translateX(-35px);
+  //   opacity: 0;
+  //   transition: all .7s ease-in-out;
+  // }
 }

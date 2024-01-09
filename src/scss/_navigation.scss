@@ -6,6 +6,19 @@
   background: #101010;
   border-radius: 500px;
 
+  @include desktop {
+    @media (max-width: 1230px) {
+      font-size: 14px;
+
+      max-width: unset;
+      width: 60%;
+    }
+  }
+
+  @include tablet {
+    display: none;
+  }
+
   &__wrapper {
     display: flex;
     align-items: center;
@@ -55,6 +68,13 @@
       background-size: contain;
       background-position: center;
       transition: all $transition;
+
+      @include desktop {
+        @media (max-width: 1230px) {
+          right: 5px;
+          top: 12px;
+        }
+      }
     }
 
     &:hover,
@@ -79,6 +99,12 @@
       background-size: 70%;
       background-position: center;
       transition: all $transition;
+
+      @include desktop {
+        @media (max-width: 1230px) {
+          width: 70px;
+        }
+      }
 
       &:hover {
         background-image: url(../img/svg/socials/youtubeRed.svg);
