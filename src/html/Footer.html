@@ -1,9 +1,49 @@
 <footer class="footer">
   <div class="container container--small">
     <div class="footer__wrapper">
-      <div class="footer__info"></div>
-      <div class="footer__about"></div>
-      <div class="footer__"></div>
+      <div class="footer__info footer-info">
+        <div class="footer-info__logo">
+          <a class="footer-info__logo-link" href="/">
+            <img class="footer-info__logo-img" src="../img/svg/slovo-jizni-logo.svg" alt="Логотип 'Слово Жизни'">
+          </a>
+        </div>
+        <div class="footer-info__socials">
+          @@include('../components/_socials/Socials.html')
+        </div>
+        <div class="footer-info__donate">
+          @@include('./../components/_donateBtn/DonateBtn.html')
+        </div>
+      </div>
+      <div class="footer__columns">
+        <div class="footer__about footer-column">
+          <div class="footer-column__title">Меню</div>
+          <div class="footer-column__box">
+            <ul class="footer-column__list">
+              <li class="footer-column__item"><a class="footer-column__link" href="/">О нас</a></li>
+              <li class="footer-column__item"><a class="footer-column__link" href="">События</a></li>
+              <li class="footer-column__item"><a class="footer-column__link" href="">Служения</a></li>
+              <li class="footer-column__item"><a class="footer-column__link" href="">Обучение</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer__contacts footer-column">
+          <div class="footer-column__title">Контакты</div>
+          <div class="footer-column__box">
+            <a class="footer-column__link" href="mailto:hello@example.com">hello@example.com</a>
+            <a class="footer-column__link" href="tel:+4917612345678">+49 176 123 456 78</a>
+            <div class="footer-column__btn">
+              @@include('./../components/_donateBtn/DonateBtn.html')
+            </div>
+            <div class="footer-column__socials">
+              @@include('../components/_socials/Socials.html')
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer__copy">
+      <span>© 2024 Слово Жизни. Все права защищены.</span>
+      <span><a href="">Политика конфиденциальности</a></span>
     </div>
   </div>
 </footer>

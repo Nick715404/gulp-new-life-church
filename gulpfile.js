@@ -1,3 +1,5 @@
+const { stream } = require('browser-sync')
+
 let project_folder = 'build'
 let source_folder = 'src'
 
@@ -8,6 +10,7 @@ let path = {
         js: project_folder + '/js/',
         img: project_folder + '/img/',
         fonts: project_folder + '/fonts/',
+        videos: source_folder + '/assets/',
     },
     src: {
         html: [source_folder + '/*.html', '!' + source_folder + '/_*.html'],
@@ -15,6 +18,7 @@ let path = {
         js: source_folder + '/js/scripts.js',
         img: source_folder + '/img/**/*.+(png|jpg|jpeg|ico|svg|webp)',
         fonts: source_folder + '/fonts/*',
+        videos: source_folder + '/assets/*',
     },
     watch: {
         html: source_folder + '/**/*.html',
@@ -47,6 +51,7 @@ function browserSync(params) {
         },
         port: 3000,
         notify: false,
+        files: ["./build/**/*", "!./build/**/*.mp4"]
     })
 }
 
@@ -61,6 +66,10 @@ function html() {
 // Images
 function images() {
     return src(path.src.img).pipe(dest(path.build.img)).pipe(browsersync.stream())
+}
+
+function videos() {
+    return src(path.src.videos).pipe(dest(path.build.videos)).pipe(browsersync.stream());
 }
 
 // Fonts
@@ -139,13 +148,13 @@ function clean(params) {
     return del(path.clean)
 }
 
-// let build = gulp.series(clean, gulp.parallel(html, js, css, images, fonts))
 
 // Without clean build
-let build = gulp.series(gulp.parallel(html, css, js, images, fonts))
+let build = gulp.series(gulp.parallel(html, css, js, videos, images, fonts))
 let watch = gulp.parallel(build, watchFiles, browserSync)
 
 exports.img = img
+exports.videos = videos
 exports.images = images
 exports.js = js
 exports.html = html

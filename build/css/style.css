@@ -1,3 +1,5 @@
+@charset "UTF-8";
+
 @font-face {
   font-family: "MullerRegular";
   src: url("../fonts/MullerRegular.woff") format("woff");
@@ -57,11 +59,11 @@ html {
   background: #191919;
   font-family: "MullerRegular", sans-serif, sans-serif;
   font-size: 22px;
-  overflow-x: clip;
 }
 
 .main__body {
   padding: 16px;
+  overflow-x: clip;
 }
 
 .page {
@@ -98,6 +100,8 @@ main {
   border-radius: 100px;
   margin-top: -95px;
   overflow-x: clip;
+  position: relative;
+  z-index: 2;
 }
 
 h2 {
@@ -108,12 +112,109 @@ h2 {
 }
 
 .logo {
+  display: block;
   -webkit-transition: all 0.4s ease-in-out;
   transition: all 0.4s ease-in-out;
 }
 
 .logo img {
+  display: block;
   width: 100%;
+  -webkit-transition: all 0.4s 0.25s ease-in-out;
+  transition: all 0.4s 0.25s ease-in-out;
+}
+
+.active {
+  overflow: hidden !important;
+  overflow-x: hidden;
+}
+
+.active .logo img {
+  -webkit-filter: invert(1);
+          filter: invert(1);
+}
+
+.active .burger-menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-transform: translateX(0%);
+      -ms-transform: translateX(0%);
+          transform: translateX(0%);
+}
+
+.active #burgerBtn {
+  border: 1px solid #000;
+}
+
+.active #burgerBtn .burger-icon__line {
+  background-color: #000;
+}
+
+.ready::after {
+  opacity: 0 !important;
+}
+
+.video {
+  cursor: pointer;
+  -webkit-transition: all 0.4s ease-in-out !important;
+  transition: all 0.4s ease-in-out !important;
+}
+
+.video:hover::after {
+  scale: 1.05;
+}
+
+.video__iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.cursor {
+  position: absolute;
+  left: 0;
+  right: 0;
+  width: 160px;
+  height: 160px;
+  background-color: #000;
+  border-radius: 100%;
+  z-index: 999;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-transition: opacity 0.4s ease-in-out, scale 0.6s ease-in-out;
+  transition: opacity 0.4s ease-in-out, scale 0.6s ease-in-out;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  pointer-events: none;
+  opacity: 0;
+  scale: 0;
+}
+
+.cursor::after {
+  content: "Подробнее";
+  position: absolute;
+  color: white;
+  opacity: 0;
+}
+
+.active-cursor {
+  opacity: 1;
+  scale: 1;
+}
+
+.active-cursor::after {
+  opacity: 1;
 }
 
 .header {
@@ -124,6 +225,7 @@ h2 {
   -webkit-transform: translateX(-50%);
       -ms-transform: translateX(-50%);
           transform: translateX(-50%);
+  z-index: 999999;
 }
 
 .header__wrapper {
@@ -140,6 +242,7 @@ h2 {
 
 .header__wrapper .burger-icon {
   position: relative;
+  z-index: 99999;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -156,6 +259,8 @@ h2 {
   border-radius: 100%;
   border: 1px solid #fff;
   cursor: pointer;
+  -webkit-transition: all 0.6s ease-in-out;
+  transition: all 0.6s ease-in-out;
 }
 
 .header__wrapper .burger-icon .burger-icon__line {
@@ -221,14 +326,189 @@ h2 {
 
 .burger-menu {
   position: absolute;
+  background-color: #ffffff;
+  top: 0;
+  left: 0;
+  z-index: 90;
+  width: 100%;
+  height: 100dvh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-transform: translateX(100%);
+      -ms-transform: translateX(100%);
+          transform: translateX(100%);
+  -webkit-transition: all 0.8s ease-in-out;
+  transition: all 0.8s ease-in-out;
+}
+
+.burger-menu .list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 20px;
+}
+
+.burger-menu .list li {
+  text-align: center;
+}
+
+.burger-menu .list__link {
+  font-weight: 500;
+  color: #000;
+  font-size: clamp(22px, 5vw, 40px);
+  text-transform: uppercase;
+  font-family: "Unbounded", sans-serif;
+  text-align: center;
+}
+
+.footer {
+  color: #fff;
+}
+
+.footer__copy {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 16px;
+  padding: 32px 0;
+  border-top: 1px solid #545454;
+}
+
+.footer__copy a {
+  color: #fff;
 }
 
 .footer__wrapper {
-  margin-top: 30%;
-  height: 334px;
+  margin: 14% 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.footer__columns {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  width: 50%;
+  max-width: 450px;
+}
+
+.footer__columns .footer-column__title {
+  text-transform: uppercase;
+  font-size: 16px;
+  margin-bottom: 32px;
+  font-family: "Unbounded", sans-serif;
+}
+
+.footer__columns .footer-column__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 16px;
+}
+
+.footer__columns .footer-column__link {
+  display: block;
+  color: #fff;
+  padding: 5px 0;
+  font-size: 18px;
+}
+
+.footer__columns .footer-column__socials {
+  display: none;
+}
+
+.footer__columns .footer__contacts .footer-column__link {
+  display: block;
+  margin-bottom: 30px;
+}
+
+.footer__columns .footer__contacts .footer-column__btn .donate-btn {
+  height: 50px;
+  width: 172px;
+  font-size: 16px;
+  background-color: #f0ab4b;
+  border-color: transparent;
+  color: #000;
+}
+
+.footer__columns .footer__contacts .footer-column__btn .donate-btn:hover {
+  border-color: #fff !important;
+  background-color: transparent;
+  color: #fff;
+}
+
+.footer-info__logo {
+  margin-bottom: 16%;
+}
+
+.footer-info__logo-link {
+  width: 90%;
+  display: block;
+}
+
+.footer-info__logo-link img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.footer-info__donate {
+  display: none;
+}
+
+.footer-info__donate .donate-btn {
+  height: 50px;
+  width: 172px;
+  font-size: 16px;
+  background-color: #f0ab4b;
+  border-color: transparent;
+  color: #000;
+}
+
+.footer-info__donate .donate-btn:hover {
+  border-color: #fff !important;
+  background-color: transparent;
+  color: #fff;
 }
 
 #home #hero {
+  position: relative;
+  width: 100%;
   height: 110dvh;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -238,6 +518,37 @@ h2 {
           align-items: center;
   background: rgb(51, 51, 51);
   border-radius: 100px 100px 0 0;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+}
+
+#home #hero::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #191919;
+  opacity: 0.4;
+  z-index: 1;
+}
+
+#home #hero #home-hero-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 110%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+#home #hero .hero__wrapper {
+  position: relative;
+  z-index: 9;
 }
 
 #home #hero .hero__title {
@@ -279,6 +590,7 @@ h2 {
           justify-content: space-between;
   margin-bottom: 5.6%;
   gap: 50px;
+  height: 100%;
 }
 
 #home #meeting .meeting__wrapper .text-box__title-box {
@@ -370,7 +682,7 @@ h2 {
   left: 17px;
   width: 24px;
   height: 24px;
-  background-image: url(../../img/svg/ri_arrow-down-line.svg);
+  background-image: url("../img/svg/ri_arrow-down-line.svg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
@@ -401,7 +713,7 @@ h2 {
 
 #home #sermons .sermons__content-box .sermons__video-box {
   position: sticky;
-  top: 20px;
+  top: 15px;
   height: 100%;
   width: 63.8%;
   overflow: hidden;
@@ -412,13 +724,34 @@ h2 {
 }
 
 #home #sermons .sermons__content-box .sermons__video-box #message-for-year .message-for-year__video {
-  background-image: url(../../img/png/year-message.png);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  height: 450px;
+  height: calc((1vw + 1vh) * 20);
   width: 100%;
   border-radius: 50px;
+  position: relative;
+  overflow: hidden;
+}
+
+#home #sermons .sermons__content-box .sermons__video-box #message-for-year .message-for-year__video::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 80px;
+  height: 80px;
+  background-image: url("../img/png/play-btn.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  z-index: 9999;
+  pointer-events: none;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 
 #home #sermons .sermons__content-box .sermons__video-box #last-sermons {
@@ -436,9 +769,13 @@ h2 {
   font-weight: 400;
 }
 
+#home #sermons .sermons__content-box .sermons__video-box #last-sermons .last-sermons__video-box {
+  overflow: hidden;
+}
+
 #home #sermons .sermons__content-box .sermons__video-box #last-sermons .last-sermons__video-box .swiper-slide {
   position: relative;
-  height: 260px;
+  height: calc((1vw + 1vh) * 10.5);
   width: 406px;
   background-color: #356fcc;
   border-radius: 30px;
@@ -455,10 +792,12 @@ h2 {
           transform: translate(-50%, -50%);
   width: 80px;
   height: 80px;
-  background-image: url(../../img/png/play-btn.png);
+  background-image: url("../img/png/play-btn.png");
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 
 #home #sermons .sermons__content-box .sermons__calendar-box {
@@ -467,7 +806,7 @@ h2 {
 
 #home #sermons .sermons__content-box .sermons__calendar-box .calendar .list__item {
   border-top: 1px solid #DBDBDB;
-  padding: 18% 0;
+  padding: 20% 0;
 }
 
 #home #sermons .sermons__content-box .sermons__calendar-box .calendar .list__item:last-child {
@@ -524,6 +863,8 @@ h2 {
 
 #home #sermons .sermons__content-box .sermons__calendar-box .calendar .list__event-title {
   font-weight: 400;
+  font-size: clamp(18px, 3.7vw, 20px);
+  line-height: 1.2;
 }
 
 #home #sermons .sermons__content-box .sermons__calendar-box .calendar .list__event-time-wrapper {
@@ -563,15 +904,16 @@ h2 {
   -webkit-transition: all 0.4s ease-in-out;
   transition: all 0.4s ease-in-out;
   overflow: hidden;
-  background-color: #8185bc;
+  background-color: #356fcc;
   -webkit-box-shadow: 0px 0px 16px -2px rgba(0, 0, 0, 0.24);
   box-shadow: 0px 0px 16px -2px rgba(0, 0, 0, 0.24);
-  margin-top: -400px;
+  margin-top: -160px;
   z-index: 999;
+  cursor: none;
 }
 
 #home #events .event-card:first-child {
-  margin-top: 0;
+  margin-top: 0 !important;
 }
 
 #home #events .event-card:hover {
@@ -585,10 +927,11 @@ h2 {
 }
 
 #home #events .event-card__text-box .event-card__title-box .event-card__title {
-  font-size: clamp(24px, 6vw, 80px);
+  font-size: clamp(20px, 6vw, 80px);
   line-height: 100%;
   text-transform: uppercase;
   color: #fff;
+  word-wrap: break-word;
 }
 
 #home #events .event-card__text-box .event-card__descr-box {
@@ -597,7 +940,7 @@ h2 {
 
 #home #events .event-card__text-box .event-card__descr-box .event-card__descr {
   color: #fff;
-  font-size: clamp(18px, 4.7vw, 22px);
+  font-size: clamp(16px, 4.7vw, 22px);
   font-weight: 400;
   line-height: normal;
 }
@@ -671,7 +1014,7 @@ h2 {
   left: 33px;
   width: 16px;
   height: 16px;
-  background-image: url(../../img/svg/black-btn-arrow.svg);
+  background-image: url("../img/svg/black-btn-arrow.svg");
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
@@ -689,6 +1032,7 @@ h2 {
   left: 0;
   width: 100%;
   height: 100%;
+  cursor: none;
 }
 
 #home #prayer .prayer__wrapper {
@@ -697,10 +1041,22 @@ h2 {
   border-radius: 30px;
   padding: 4% 4.5%;
   overflow: hidden;
-  background-image: url(../../img/png/overlay.png);
+  background-image: url("../img/png/overlay.png");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+}
+
+#home #prayer .prayer__wrapper::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  opacity: 0.5;
+  display: none;
 }
 
 #home #prayer .prayer__wrapper .prayer__title-box {
@@ -711,7 +1067,7 @@ h2 {
 }
 
 #home #prayer .prayer__wrapper .prayer__title-box .prayer__title {
-  font-size: clamp(22px, 4vw, 30px);
+  font-size: clamp(18px, 3.4vw, 30px);
   color: #fff;
   text-transform: uppercase;
   font-weight: 400;
@@ -747,104 +1103,266 @@ h2 {
   line-height: 100%;
   letter-spacing: 1px;
   text-transform: uppercase;
+  border: 1px solid #fff;
   -webkit-transition: all 0.4s ease-in-out;
   transition: all 0.4s ease-in-out;
 }
 
 #home #prayer .prayer__wrapper .prayer__link-box .prayer__link:hover {
-  width: 290px;
-  padding-left: 50px;
+  background-color: #f0ab4b;
+  color: #fff;
+  border-color: transparent;
 }
 
-#home #prayer .prayer__wrapper .prayer__link-box .prayer__link:hover::after {
-  -webkit-transform: translateX(0px);
-      -ms-transform: translateX(0px);
-          transform: translateX(0px);
-  opacity: 1;
+#valuation-page .logo img {
+  -webkit-filter: invert(100%);
+          filter: invert(100%);
 }
 
-#home #prayer .prayer__wrapper .prayer__link-box .prayer__link::after {
-  content: "";
-  position: absolute;
-  top: 19px;
-  left: 33px;
-  width: 16px;
-  height: 16px;
-  background-image: url(../../img/svg/black-btn-arrow.svg);
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: center;
-  -webkit-transform: translateX(-55px);
-      -ms-transform: translateX(-55px);
-          transform: translateX(-55px);
-  opacity: 0;
-  -webkit-transition: all 0.6s ease-in-out;
-  transition: all 0.6s ease-in-out;
+#valuation-page .burger-icon {
+  border-color: #000;
 }
 
-#home #connect .connect__wrapper {
-  position: relative;
-  max-width: 678px;
-  text-align: center;
-  margin: 0 auto;
+#valuation-page .burger-icon .burger-icon__line {
+  background-color: #000;
 }
 
-#home #connect .connect__wrapper::after {
-  content: "";
-  position: absolute;
-  bottom: -30%;
-  left: 5%;
-  width: 295px;
-  height: 117px;
-  background-image: url(../../img/svg/red-lines.svg);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: contain;
+#valuation-page .burger-menu {
+  background-color: #000;
 }
 
-#home #connect .connect__wrapper::before {
-  content: "";
-  position: absolute;
-  top: 58px;
-  right: -25%;
-  width: 315px;
-  height: 317px;
-  background-image: url(../../img/svg/green-arrow.svg);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: contain;
+#valuation-page .burger-menu .list__link {
+  color: #fff;
 }
 
-#home #connect .connect__title-box {
-  margin-bottom: 12.5%;
+#valuation-page .donate-btn {
+  border-color: #000;
+  color: #000;
 }
 
-#home #connect .connect__title-box .connect__title {
-  font-size: clamp(30px, 4vw, 60px);
-  font-weight: 400;
-  line-height: 120%;
+#valuation-page .page {
+  background-color: #fff;
+  border-radius: 100px;
 }
 
-#home #connect .connect__socials-box .list {
+#valuation-page #valuation-hero .hero__wrapper {
+  height: 100dvh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  gap: 37px;
 }
 
-#home #connect .connect__socials-box .list__item {
-  width: 92px;
-  height: 92px;
-  background-color: #191919;
+#valuation-page #valuation-hero .hero__wrapper .hero__text-content {
+  text-align: center;
 }
 
-#home #connect .connect__socials-box .list__item:hover {
-  background-color: #f0ab4b;
+#valuation-page #valuation-hero .hero__wrapper .hero__text-content .hero__page {
+  display: block;
+  font-size: 16px;
+  margin-bottom: 3.5%;
+  text-transform: uppercase;
 }
 
-#home #connect .connect__socials-box .list__link {
-  width: 37px;
-  height: 37px;
+#valuation-page #valuation-hero .hero__wrapper .hero__text-content .hero__title {
+  font-size: clamp(25px, 10vw, 70px);
+  font-family: "Unbounded", sans-serif;
+  font-weight: 400;
+  line-height: 1.2;
+  text-transform: uppercase;
+  margin-bottom: 4%;
+}
+
+#valuation-page #valuation-hero .hero__wrapper .hero__text-content .hero__text {
+  font-size: clamp(16px, 3vw, 20px);
+  line-height: 1.3;
+  max-width: 70%;
+  margin: 0 auto;
+}
+
+#valuation-page #valuation-church-is .church-is-grid {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 25px;
+  height: calc((1vw + 1vh) * 20);
+  max-height: 435px;
+}
+
+#valuation-page #valuation-church-is .church-is-grid .church-is-grid__item {
+  background-color: rgba(208, 208, 208, 0.3294117647);
+  border-radius: 20px;
+  width: 40%;
+  height: 100%;
+  padding: 3.5%;
+  font-family: "Unbounded", sans-serif;
+}
+
+#valuation-page #valuation-church-is .church-is-grid .church-is-grid__item .church-is__title {
+  font-size: clamp(20px, 3.4vw, 40px);
+}
+
+#valuation-page #valuation-church-is .church-is-grid .church-is-grid__item .grid-children {
+  position: relative;
+  background-color: rgba(208, 208, 208, 0.3294117647);
+  border-radius: 20px;
+  padding: 7.5%;
+}
+
+#valuation-page #valuation-church-is .church-is-grid .church-is-grid__item .grid-children:nth-child(1),
+#valuation-page #valuation-church-is .church-is-grid .church-is-grid__item .grid-children:nth-child(4) {
+  background-color: rgba(25, 25, 25, 0.3176470588);
+}
+
+#valuation-page #valuation-church-is .church-is-grid .church-is-grid__item .grid-children .grid-children__text {
+  font-size: clamp(16px, 2.7vw, 22px);
+}
+
+#valuation-page #valuation-church-is .church-is-grid .church-is-grid__item .grid-children .grid-children__link {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+#valuation-page #valuation-church-is .church-is-grid #small {
+  padding: 0;
+  background-color: transparent;
+  width: 60%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1ft);
+  gap: 35px;
+}
+
+#valuation-page #valuation-church-info .content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  gap: 30px;
+  margin-bottom: 8%;
+}
+
+#valuation-page #valuation-church-info .content .content__title-box {
+  width: 40%;
+}
+
+#valuation-page #valuation-church-info .content .content__title-box .content__title {
+  font-size: clamp(30px, 3.2vw, 50px);
+}
+
+#valuation-page #valuation-church-info .content .content__text-box {
+  position: relative;
+  width: 60%;
+}
+
+#valuation-page #valuation-church-info .content .content__text-box::after {
+  content: "";
+  position: absolute;
+  top: -20px;
+  left: -35px;
+  width: 78px;
+  height: 61px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+#valuation-page #valuation-church-info .content .content__text-box .content__text {
+  font-size: clamp(16px, 1.7vw, 22px);
+  line-height: 1.2;
+  margin-top: 4%;
+}
+
+#valuation-page #valuation-church-info .church-videos {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 25px;
+  height: calc((1vw + 1vh) * 25);
+  max-height: 589px;
+}
+
+#valuation-page #valuation-church-info .church-videos .church-videos__item {
+  background-color: rgba(208, 208, 208, 0.3294117647);
+  height: 100%;
+}
+
+#valuation-page #valuation-church-info .church-videos .church-videos__item .children-video-item {
+  width: 100%;
+  height: 50%;
+  background-color: rgba(208, 208, 208, 0.3294117647);
+  border-radius: 30px;
+}
+
+#valuation-page #valuation-church-info .church-videos #big {
+  width: 60%;
+  border-radius: 50px;
+}
+
+#valuation-page #valuation-church-info .church-videos #small {
+  width: 40%;
+  background-color: transparent;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  gap: 25px;
+}
+
+#valuation-page [data-name=place-of-love] .content__text-box::after {
+  background-image: url("../../img/svg/top-quots-red.svg");
+}
+
+#valuation-page [data-name=place-for-all] .content__text-box::after {
+  background-image: url("../../img/svg/top-quots-green.svg");
+}
+
+#valuation-page [data-name=place-for-growth] .content__text-box::after {
+  background-image: url("../../img/svg/top-quots-yellow.svg");
+}
+
+#valuation-page [data-name=place-to-end-of-the-world] .content__text-box::after {
+  background-image: url("../../img/svg/top-quots-purple.svg");
+}
+
+#valuation-page.active .logo img {
+  -webkit-filter: invert(0%) !important;
+          filter: invert(0%) !important;
+}
+
+#valuation-page.active #burgerBtn {
+  border-color: #fff !important;
+}
+
+#valuation-page.active .burger-icon {
+  border-color: #fff;
+}
+
+#valuation-page.active .burger-icon .burger-icon__line {
+  background-color: #fff !important;
 }
 
 .nav {
@@ -887,6 +1405,14 @@ h2 {
   transition: all 0.4s ease-in-out;
 }
 
+.nav__item:nth-child(5) {
+  padding: 2% 2% 2% 2%;
+}
+
+.nav__item:nth-child(5) .nav__link::after {
+  content: none !important;
+}
+
 .nav__item:hover {
   border: 1px solid #fff;
 }
@@ -919,6 +1445,10 @@ h2 {
   background-position: center;
   -webkit-transition: all 0.4s ease-in-out;
   transition: all 0.4s ease-in-out;
+}
+
+.nav__link::after::last-child {
+  display: none !important;
 }
 
 .nav__link:hover::after,
@@ -958,14 +1488,15 @@ h2 {
   max-width: 211px;
   width: 100%;
   outline: none;
-  border: 1px solid #fff;
+  border: 2px solid #fff;
   border-radius: 500px;
   background: none;
   color: #fff;
   font-size: clamp(14px, 1.4vw, 18px);
   font-family: "MullerMedium", sans-serif;
   text-transform: uppercase;
-  padding: 1.4% 2%;
+  width: 211px;
+  height: 50px;
   cursor: pointer;
   -webkit-transition: all 0.4s ease-in-out;
   transition: all 0.4s ease-in-out;
@@ -974,6 +1505,7 @@ h2 {
 
 .donate-btn:hover {
   background-color: #f0ab4b;
+  border-color: transparent !important;
 }
 
 .socials .list {
@@ -1025,6 +1557,70 @@ h2 {
   left: 0;
   width: 100%;
   height: 100%;
+}
+
+#connect .connect__wrapper {
+  position: relative;
+  text-align: center;
+  margin: 0 auto;
+}
+
+#connect .connect__wrapper::after {
+  content: "";
+  position: absolute;
+  bottom: -40%;
+  left: 24%;
+  width: 295px;
+  height: 117px;
+  background-image: url("../img/svg/red-lines.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+#connect .connect__wrapper::before {
+  content: "";
+  position: absolute;
+  top: 5%;
+  right: 10%;
+  width: 315px;
+  height: 317px;
+  background-image: url("../img/svg/green-arrow.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+#connect .connect__title-box {
+  margin-bottom: 4%;
+}
+
+#connect .connect__title-box .connect__title {
+  font-size: clamp(30px, 3.5vw, 60px);
+  font-weight: 400;
+  line-height: 120%;
+}
+
+#connect .connect__socials-box .list {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 37px;
+}
+
+#connect .connect__socials-box .list__item {
+  width: 92px;
+  height: 92px;
+  background-color: #191919;
+}
+
+#connect .connect__socials-box .list__item:hover {
+  background-color: #f0ab4b;
+}
+
+#connect .connect__socials-box .list__link {
+  width: 37px;
+  height: 37px;
 }
 
 /**
@@ -1855,7 +2451,15 @@ button.swiper-pagination-bullet {
     margin-bottom: 140px;
   }
 
-  #home #connect {
+  #valuation-page #valuation-church-is {
+    margin-bottom: 140px;
+  }
+
+  #valuation-page #valuation-church-info {
+    margin-bottom: 140px;
+  }
+
+  #connect {
     margin-bottom: 140px;
   }
 }
@@ -1873,6 +2477,10 @@ button.swiper-pagination-bullet {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+  }
+
+  .header .header__donate-btn {
+    display: none;
   }
 
   #home #hero {
@@ -1961,13 +2569,22 @@ button.swiper-pagination-bullet {
     margin-bottom: 5%;
   }
 
+  #home #sermons .sermons__content-box .sermons__video-box #message-for-year .message-for-year__video::after {
+    width: 60px;
+    height: 60px;
+  }
+
   #home #sermons .sermons__content-box .sermons__video-box #last-sermons .last-sermons__title-box {
     margin-bottom: 5%;
   }
 
+  #home #sermons .sermons__content-box .sermons__video-box #last-sermons .last-sermons__video-box .swiper-slide::after {
+    width: 60px;
+    height: 60px;
+  }
+
   #home #sermons .sermons__content-box .sermons__video-box #last-sermons .last-sermons__video-box .swiper-slide {
-    height: 220px;
-    width: 380px !important;
+    height: calc((1vw + 1vh) * 12);
   }
 
   #home #sermons .sermons__content-box .sermons__calendar-box {
@@ -1985,7 +2602,7 @@ button.swiper-pagination-bullet {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    padding: 6% 0;
+    padding: 6% 3%;
   }
 
   #home #sermons .sermons__content-box .sermons__calendar-box .calendar .list__date-wrapper {
@@ -2022,11 +2639,30 @@ button.swiper-pagination-bullet {
   }
 
   #home #prayer .prayer__wrapper {
-    background-position: right;
+    background-position: 75% 100%;
+    min-height: 286px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+
+  #home #prayer .prayer__wrapper::after {
+    display: block;
   }
 
   #home #prayer .prayer__wrapper .prayer__title-box {
     max-width: 100%;
+    margin-bottom: 6%;
   }
 
   #home #prayer .prayer__wrapper .prayer__title-box .prayer__title {
@@ -2038,16 +2674,27 @@ button.swiper-pagination-bullet {
     margin: 0 auto;
   }
 
-  #home #prayer .prayer__wrapper .prayer__link-box .prayer__link:hover {
-    width: 220px;
-    padding: 1% 1.5%;
+  #valuation-page .page {
+    border-radius: 0 0 50px 50px;
   }
 
-  #home #prayer .prayer__wrapper .prayer__link-box .prayer__link::after {
-    left: 0;
+  #valuation-page #valuation-hero .hero__wrapper .hero__text-content .hero__text {
+    max-width: unset;
   }
 
-  #home #connect {
+  #valuation-page #valuation-church-is {
+    margin-bottom: 120px;
+  }
+
+  #valuation-page #valuation-church-is .church-is-grid {
+    gap: 15px;
+  }
+
+  #valuation-page #valuation-church-is .church-is-grid #small {
+    gap: 15px;
+  }
+
+  #valuation-page #valuation-church-info {
     margin-bottom: 120px;
   }
 
@@ -2055,13 +2702,21 @@ button.swiper-pagination-bullet {
     display: none;
   }
 
-  .donate-btn {
-    display: none;
-  }
-
   .socials .list__item {
     width: 50px;
     height: 50px;
+  }
+
+  #connect {
+    margin-bottom: 120px;
+  }
+
+  #connect .connect__wrapper::after {
+    display: none;
+  }
+
+  #connect .connect__wrapper::before {
+    display: none;
   }
 }
 
@@ -2072,16 +2727,124 @@ button.swiper-pagination-bullet {
 
   .white-box {
     border-radius: 50px;
-    padding: 95px 0 0 0;
+    padding: 95px 0;
     position: relative;
   }
 
   .logo {
-    width: 29%;
+    width: 25%;
   }
 
   .header {
     top: 45px;
+  }
+
+  .header__wrapper .burger-icon {
+    width: 50px;
+    height: 50px;
+  }
+
+  .header__wrapper .burger-icon .burger-icon__line {
+    width: 20px;
+  }
+
+  .header__wrapper .burger-icon #firt-line {
+    top: 18px;
+  }
+
+  .header__wrapper .burger-icon #second-line {
+    top: 24px;
+    width: 25px;
+  }
+
+  .header__wrapper .burger-icon #third-line {
+    top: 24px;
+    width: 25px;
+  }
+
+  .header__wrapper .burger-icon #fourth-line {
+    top: 30px;
+  }
+
+  .header__wrapper .active #firt-line {
+    top: 24px;
+  }
+
+  .header__wrapper .active #second-line {
+    top: 24px;
+  }
+
+  .header__wrapper .active #third-line {
+    top: 24px;
+  }
+
+  .header__wrapper .active #fourth-line {
+    top: 24px;
+  }
+
+  .burger-menu {
+    width: 100%;
+  }
+
+  .footer__copy {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+    gap: 25px;
+    text-align: center;
+  }
+
+  .footer__wrapper {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+
+  .footer__columns {
+    width: 100%;
+    max-width: unset;
+  }
+
+  .footer__columns .footer-column__socials {
+    display: block;
+  }
+
+  .footer__columns .footer__contacts .footer-column__btn {
+    display: none;
+  }
+
+  .footer-info {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    width: 100%;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #545454;
+    margin-bottom: 10%;
+  }
+
+  .footer-info__logo {
+    margin-bottom: 0;
+  }
+
+  .footer-info__donate {
+    display: block;
+  }
+
+  .footer-info__socials {
+    display: none;
+  }
+
+  #home #hero {
+    background-position: 25% 100%;
   }
 
   #home #hero {
@@ -2128,8 +2891,13 @@ button.swiper-pagination-bullet {
     max-width: 200px;
   }
 
+  #home #sermons .sermons__content-box .sermons__video-box #message-for-year .message-for-year__video::after {
+    width: 40px;
+    height: 40px;
+  }
+
   #home #sermons .sermons__content-box .sermons__video-box #message-for-year .message-for-year__video {
-    height: 245px;
+    height: calc((1vw + 1vh) * 28);
     border-radius: 30px;
   }
 
@@ -2137,9 +2905,13 @@ button.swiper-pagination-bullet {
     max-width: 192px;
   }
 
+  #home #sermons .sermons__content-box .sermons__video-box #last-sermons .last-sermons__video-box .swiper-slide::after {
+    width: 40px;
+    height: 40px;
+  }
+
   #home #sermons .sermons__content-box .sermons__video-box #last-sermons .last-sermons__video-box .swiper-slide {
-    height: 182px !important;
-    width: 284px !important;
+    height: calc((1vw + 1vh) * 16);
   }
 
   #home #sermons .sermons__content-box .sermons__calendar-box .calendar .list__item {
@@ -2152,8 +2924,23 @@ button.swiper-pagination-bullet {
             align-items: flex-start;
   }
 
+  #home #sermons .sermons__content-box .sermons__calendar-box .calendar .list__date-wrapper {
+    width: 100%;
+    margin-bottom: 2%;
+  }
+
+  #home #sermons .sermons__content-box .sermons__calendar-box .calendar .list__day-number {
+    font-size: 60px;
+    width: 65px;
+    margin-right: 9%;
+  }
+
   #home #sermons .sermons__content-box .sermons__calendar-box .calendar .list__events {
     width: 100%;
+  }
+
+  #home #sermons .sermons__content-box .sermons__calendar-box .calendar .list__event-time {
+    padding: 8px 11px;
   }
 
   #home #events {
@@ -2174,8 +2961,50 @@ button.swiper-pagination-bullet {
     margin-bottom: 90px;
   }
 
-  #home #connect {
+  #home #prayer .prayer__wrapper {
+    min-height: 529px;
+    background-image: url("../img/png/prayer-bg-mobile.png");
+  }
+
+  #valuation-page #valuation-church-is {
     margin-bottom: 90px;
+  }
+
+  #valuation-page #valuation-church-is .church-is-grid {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    height: unset;
+  }
+
+  #valuation-page #valuation-church-is .church-is-grid .church-is-grid__item {
+    width: 100%;
+  }
+
+  #valuation-page #valuation-church-is .church-is-grid #small {
+    width: 100%;
+  }
+
+  #valuation-page #valuation-church-info {
+    margin-bottom: 90px;
+  }
+
+  #connect {
+    margin-bottom: 90px;
+  }
+
+  #connect .connect__title-box {
+    margin-bottom: 5%;
+  }
+
+  #connect .connect__socials-box .list {
+    gap: 20px;
+  }
+
+  #connect .connect__socials-box .list__item {
+    width: 60px;
+    height: 60px;
   }
 
   .swiper-button-next,
@@ -2195,39 +3024,8 @@ button.swiper-pagination-bullet {
 }
 
 @media (max-width: 767px) and (max-width: 490px) {
-  .header__wrapper .burger-icon {
-    width: 50px;
-    height: 50px;
-  }
-
-  .header__wrapper .burger-icon .burger-icon__line {
-    width: 20px;
-  }
-
-  .header__wrapper .burger-icon #firt-line {
-    top: 18px;
-  }
-
-  .header__wrapper .burger-icon #second-line {
-    top: 24px;
-    width: 25px;
-  }
-
-  .header__wrapper .burger-icon #third-line {
-    top: 24px;
-    width: 25px;
-  }
-
-  .header__wrapper .burger-icon #fourth-line {
-    top: 30px;
-  }
-
-  .header__wrapper .active #firt-line {
-    top: 24px;
-  }
-
-  .header__wrapper .active #fourth-line {
-    top: 24px;
+  .logo {
+    width: 30%;
   }
 }
 

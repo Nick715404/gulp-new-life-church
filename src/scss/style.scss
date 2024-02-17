@@ -9,10 +9,12 @@
 
 // Sections or Pages SCSS-files imports
 @import './pages/home';
+@import './pages/valuation';
 
 @import './navigation';
 @import './donateBtn';
 @import './socials';
+@import './connect';
 
 // Libs
 @import './blocks/swiper';

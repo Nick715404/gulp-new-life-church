@@ -1,0 +1,298 @@
+#valuation-page {
+
+  .logo {
+    img {
+      filter: invert(100%);
+    }
+  }
+
+  .burger-icon {
+    border-color: $black;
+
+    .burger-icon__line {
+      background-color: $black;
+    }
+  }
+
+  .burger-menu {
+    background-color: $black;
+
+    .list__link {
+      color: $white;
+    }
+  }
+
+  .donate-btn {
+    border-color: $black;
+    color: $black;
+  }
+
+  .page {
+    background-color: #fff;
+
+    border-radius: 100px;
+
+    @include tablet {
+      border-radius: 0 0 50px 50px;
+    }
+  }
+}
+
+#valuation-page {
+
+  #valuation-hero {
+
+    .hero__wrapper {
+      height: 100dvh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      .hero__text-content {
+        text-align: center;
+
+        .hero__page {
+          display: block;
+          font-size: 16px;
+          margin-bottom: 3.5%;
+          text-transform: uppercase;
+        }
+
+        .hero__title {
+          font-size: clamp(25px, 10vw, 70px);
+          font-family: $fontSecond;
+          font-weight: 400;
+          line-height: 1.2;
+          text-transform: uppercase;
+          margin-bottom: 4%;
+        }
+
+        .hero__text {
+          font-size: $p;
+          line-height: 1.3;
+          max-width: 70%;
+          margin: 0 auto;
+
+          @include tablet {
+            max-width: unset
+          }
+        }
+      }
+    }
+
+  }
+
+  #valuation-church-is {
+
+    @include sectionMargin;
+
+    .church-is-grid {
+      display: flex;
+      align-items: center;
+      gap: 25px;
+      height: calc($index * 20);
+      max-height: 435px;
+
+      @include tablet {
+        gap: 15px;
+      }
+
+      @include phone {
+        flex-direction: column;
+        height: unset;
+      }
+
+      .church-is-grid__item {
+        background-color: #d0d0d054;
+        border-radius: 20px;
+        width: 40%;
+        height: 100%;
+        padding: 3.5%;
+
+        @include phone {
+          width: 100%;
+        }
+
+        font-family: $fontSecond;
+
+        .church-is__title {
+          font-size: clamp(20px, 3.4vw, 40px);
+        }
+
+        .grid-children {
+          position: relative;
+          background-color: #d0d0d054;
+          border-radius: 20px;
+          padding: 7.5%;
+
+          &:nth-child(1),
+          &:nth-child(4) {
+            background-color: #19191951;
+          }
+
+          .grid-children__text {
+            font-size: clamp(16px, 2.7vw, 22px);
+          }
+
+          .grid-children__link {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+          }
+        }
+      }
+
+      #small {
+        padding: 0;
+        background-color: transparent;
+        width: 60%;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1ft);
+        gap: 35px;
+
+        @include tablet {
+          gap: 15px;
+        }
+
+        @include phone {
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  #valuation-church-info {
+    // display: none;
+
+    @include sectionMargin;
+
+    .content {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 30px;
+
+      margin-bottom: 8%;
+
+      .content__title-box {
+        width: 40%;
+
+        .content__title {
+          font-size: clamp(30px, 3.2vw, 50px);
+        }
+      }
+
+      .content__text-box {
+        position: relative;
+        width: 60%;
+
+        &::after {
+          content: '';
+          position: absolute;
+          top: -20px;
+          left: -35px;
+          width: 78px;
+          height: 61px;
+          background-repeat: no-repeat;
+          background-size: contain;
+          background-position: center;
+        }
+
+        .content__text {
+          font-size: clamp(16px, 1.7vw, 22px);
+          line-height: 1.2;
+          margin-top: 4%;
+        }
+      }
+    }
+
+    .church-videos {
+      display: flex;
+      gap: 25px;
+      height: calc($index * 25);
+      max-height: 589px;
+
+      .church-videos__item {
+        background-color: #d0d0d054;
+        height: 100%;
+
+        .children-video-item {
+          width: 100%;
+          height: 50%;
+          background-color: #d0d0d054;
+          border-radius: 30px;
+        }
+      }
+
+      #big {
+        width: 60%;
+        border-radius: 50px;
+      }
+
+      #small {
+        width: 40%;
+        background-color: transparent;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 25px;
+      }
+    }
+  }
+
+  [data-name="place-of-love"] {
+    .content__text-box {
+      &::after {
+        background-image: url('../../img/svg/top-quots-red.svg');
+      }
+    }
+  }
+
+  [data-name="place-for-all"] {
+    .content__text-box {
+      &::after {
+        background-image: url('../../img/svg/top-quots-green.svg');
+      }
+    }
+  }
+
+  [data-name="place-for-growth"] {
+    .content__text-box {
+      &::after {
+        background-image: url('../../img/svg/top-quots-yellow.svg');
+      }
+    }
+  }
+
+  [data-name="place-to-end-of-the-world"] {
+    .content__text-box {
+      &::after {
+        background-image: url('../../img/svg/top-quots-purple.svg');
+      }
+    }
+  }
+
+}
+
+#valuation-page.active {
+  .logo {
+    img {
+      filter: invert(0%) !important;
+    }
+  }
+
+  #burgerBtn {
+    border-color: $white !important;
+  }
+
+  .burger-icon {
+    border-color: $white;
+
+    .burger-icon__line {
+      background-color: $white !important;
+    }
+  }
+}

@@ -3,14 +3,15 @@
     <div class="header__wrapper">
       @@include('../components/_logo/Logo.html')
       @@include('../components/_navigation/Navigation.html')
-      @@include('../components/_donateBtn/DonateBtn.html')
-      <div class="burger-menu__icon burger-icon">
+      <div class="header__donate-btn">
+        @@include('../components/_donateBtn/DonateBtn.html')
+      </div>
+      <div class="burger-menu__icon burger-icon" id="burgerBtn">
         <span id="firt-line" class="burger-icon__line"></span>
         <span id="second-line" class="burger-icon__line"></span>
         <span id="third-line" class="burger-icon__line"></span>
         <span id="fourth-line" class="burger-icon__line"></span>
       </div>
-      @@include('../components/_burgerMenu/BurgerMenu.html')
     </div>
   </div>
 </header>

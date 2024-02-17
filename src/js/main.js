@@ -1,31 +1,4 @@
-@@include('./libs/swiper-bundle.min.js');
-
-const swiper = new Swiper('.sermons-swiper', {
-  // Optional parameters
-  direction: 'horizontal',
-  loop: false,
-  slidesPerView: 2,
-  spaceBetween: 25,
-  navigation: {
-    nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev',
-  },
-
-  breakpoints: {
-    490: {
-      spaceBetween: 12,
-    },
-    768: {
-      spaceBetween: 16,
-      slidesPerView: "auto",
-    },
-    1024: {
-      slidesPerView: 2,
-      spaceBetween: 25
-    }
-  }
-
-});
+let body = document.querySelector('.main__body');
 
 const burgerMenu = () => {
   const burger = document.querySelector('.burger-icon');
@@ -33,8 +6,41 @@ const burgerMenu = () => {
   const body = document.querySelector('body');
 
   burger.addEventListener('click', () => {
-    burger.classList.add('active');
+    burger.classList.toggle('active');
+    body.classList.toggle('active');
   })
 }
 
-burgerMenu();
+const cursorHandler = () => {
+  const cursor = document.getElementById('cursor');
+  const cards = document.querySelectorAll('.event-card');
+
+  const handleMouseEnter = () => {
+    cursor.classList.add('active-cursor');
+  };
+
+  const handleMouseLeave = () => {
+    cursor.classList.remove('active-cursor');
+  };
+
+  const handleMouseMove = (e) => {
+    let mouseX = e.pageX;
+    let mouseY = e.pageY;
+
+    cursor.style.left = mouseX + 'px';
+    cursor.style.top = mouseY + 'px';
+  };
+
+  cards.forEach(card => {
+    card.addEventListener('mouseenter', handleMouseEnter);
+    card.addEventListener('mouseleave', handleMouseLeave);
+  })
+
+  document.addEventListener('mousemove', handleMouseMove);
+};
+
+if (body.id === 'home-page') {
+  cursorHandler();
+}
+
+burgerMenu(); 

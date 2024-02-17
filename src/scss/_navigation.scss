@@ -1,5 +1,4 @@
 .nav {
-
   max-width: 692px;
   width: 100%;
   font-size: 16px;
@@ -36,6 +35,17 @@
     max-height: 41px;
     padding: 2% 4% 2% 2%;
     transition: all $transition;
+
+    &:nth-child(5) {
+
+    padding: 2% 2% 2% 2%;
+
+      .nav__link {
+        &::after {
+          content: none !important;
+        }
+      }
+    }
 
     &:hover {
       border: 1px solid $white;
@@ -74,6 +84,10 @@
           right: 5px;
           top: 12px;
         }
+      }
+
+      &::last-child {
+        display: none !important;
       }
     }
 
